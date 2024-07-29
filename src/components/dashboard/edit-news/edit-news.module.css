@@ -1,0 +1,13 @@
+.boxWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.helperText {
+    color: red;
+    font-size: 12px;
+}

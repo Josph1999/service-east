@@ -1,0 +1,9 @@
+.checkBoxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 250px;
+  padding: 26px;
+  border-radius: 18px;
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+export const paths = {
+  home: '/',
+  auth: { signIn: '/auth/sign-in', signUp: '/auth/sign-up', resetPassword: '/auth/reset-password' },
+  dashboard: {
+    overview: '/dashboard',
+    account: '/dashboard/account',
+    customers: '/dashboard/customers',
+    integrations: '/dashboard/integrations',
+    settings: '/dashboard/settings',
+    addPost: '/dashboard/add-post',
+    addSpeaker: '/dashboard/add-speaker',
+    speakers: '/dashboard/speakers',
+    addNews: '/dashboard/add-news',
+    publishedNews: '/dashboard/published-news',
+    addAgenda: '/dashboard/add-agenda',
+    sponsors: '/dashboard/sponsors',
+    addSponsor: '/dashboard/add-sponsor',
+    galleryUpload: '/dashboard/gallery',
+    agenda: '/dashboard/agendas',
+  },
+  errors: { notFound: '/errors/not-found' },
+} as const;

@@ -1,0 +1,23 @@
+.main {
+    background: linear-gradient(90deg, #000 0.34%, rgba(0, 0, 0, 0) 56.65%),
+      lightgray 50% / cover no-repeat;
+  }
+  
+  /* main.module.css */
+  
+  .videoContainer {
+    position: relative;
+  }
+  
+  .videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Make sure the video covers the entire container */
+    z-index: 0; /* Set a lower z-index to position the video behind text */
+  }
+  
+  /* Add any additional styles for your video here */
+  

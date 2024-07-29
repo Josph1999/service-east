@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "UpperCaseGeo";
+    src: url("TBCContractica-Black.ttf") format("truetype");
+  }
+
+  body {
+    font-family: 'UpperCaseGeo !important';
+  }

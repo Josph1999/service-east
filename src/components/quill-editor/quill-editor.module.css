@@ -1,0 +1,55 @@
+/* .quillEditor {
+  max-width: 800px !important;
+}
+
+@media screen and (max-width: 990px) {
+  .quillEditor {
+    max-width: 750px !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .quillEditor {
+    max-width: 650px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .quillEditor {
+    max-width: 570px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quillEditor {
+    max-width: 470px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .quillEditor {
+    max-width: 380px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .quillEditor {
+    max-width: 350px !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .quillEditor {
+    max-width: 300px !important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .quillEditor {
+    max-width: 200px !important;
+  }
+} */
+
+.editor {
+  max-width: 800px !important;
+}
