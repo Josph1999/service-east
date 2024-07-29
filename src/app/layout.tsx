@@ -7,7 +7,6 @@ import { LanguageProvider } from '@/contexts/language-context';
 import { UserProvider } from '@/contexts/user-context';
 import { LocalizationProvider } from '@/components/core/localization-provider';
 import { ThemeProvider } from '@/components/core/theme-provider/theme-provider';
-import { Typography } from '@mui/material';
 
 export const viewport = { width: 'device-width', initialScale: 1 } satisfies Viewport;
 
@@ -23,7 +22,6 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
         <LocalizationProvider>
           <LanguageProvider>
             <UserProvider>
-              <Typography>HEYY</Typography>
               <ThemeProvider>{children}</ThemeProvider>
             </UserProvider>
           </LanguageProvider>

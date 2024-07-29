@@ -1,17 +1,12 @@
 import React from 'react';
 
-export default function ArrowIcon(): React.JSX.Element {
+export default function ArrowIcon({ fill = '#FCFCFC' }: { fill: string }): React.JSX.Element {
   return (
-    <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <mask id="mask0_214_153" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="30">
-        <rect x="0.873047" width="31.1268" height="30" fill="#D9D9D9" />
-      </mask>
-      <g mask="url(#mask0_214_153)">
-        <path
-          d="M21.8514 16.25H6.06104V13.75H21.8514L14.5885 6.75L16.4366 5L26.8122 15L16.4366 25L14.5885 23.25L21.8514 16.25Z"
-          fill="#FCFCFC"
-        />
-      </g>
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M20.9358 0.833252H9.06417C3.9075 0.833252 0.833336 3.90742 0.833336 9.06409V20.9216C0.833336 26.0924 3.9075 29.1666 9.06417 29.1666H20.9217C26.0783 29.1666 29.1525 26.0924 29.1525 20.9358V9.06409C29.1667 3.90742 26.0925 0.833252 20.9358 0.833252ZM17.5358 19.2499C17.9467 19.6608 17.9467 20.3407 17.5358 20.7516C17.3233 20.9641 17.0542 21.0633 16.785 21.0633C16.5158 21.0633 16.2467 20.9641 16.0342 20.7516L11.0333 15.7508C10.6225 15.3399 10.6225 14.6599 11.0333 14.2491L16.0342 9.24825C16.445 8.83742 17.125 8.83742 17.5358 9.24825C17.9467 9.65909 17.9467 10.3391 17.5358 10.7499L13.2858 14.9999L17.5358 19.2499Z"
+        fill={fill}
+      />
     </svg>
   );
 }
