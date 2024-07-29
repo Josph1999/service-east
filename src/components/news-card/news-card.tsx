@@ -7,7 +7,6 @@ import { Box } from '@mui/system';
 import { useLanguage } from '@/contexts/language-context';
 
 import { type NewsInterface } from '../dashboard/published-news/interfaces/news.interface';
-import ArrowIcon from '../icons/arrow-icon';
 
 export interface NewsCardProps {
   item: NewsInterface;
@@ -41,7 +40,6 @@ export default function NewsCard(props: NewsCardProps): React.JSX.Element {
           <Typography sx={{ color: 'white', fontWeight: '500', textTransform: 'uppercase', fontSize: '22px' }}>
             {`${renderLanguage(`${item.title_ka.slice(0, 30)  }...`, item.title_eng).slice(0, 30)}...`}
           </Typography>
-          <ArrowIcon />
         </Box>
 
         <Typography sx={{ color: 'white' }}>
