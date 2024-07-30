@@ -20,6 +20,10 @@
   --icon-fontSize-lg: 1.5rem;
 }
 
+body {
+  width: 1900px;
+}
+
 *:focus-visible {
   outline: 2px solid var(--mui-palette-primary-main);
 }
