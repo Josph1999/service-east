@@ -10,11 +10,27 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
+import { motion, type Variants } from 'framer-motion';
 
 import { Language, useLanguage } from '@/contexts/language-context';
+
 import ServiceEastLogo from '../icons/service-east-logo';
 import MobileNavBar from '../mobile-nav-bar/mobile-nav-bar';
 import { headerLinks } from './links/links';
+
+const bounceAnimation = {
+  hidden: { scale: 1, opacity: 1 },
+  visible: {
+    scale: [1, 1.1, 1],
+    opacity: [1, 0.9, 1],
+    transition: {
+      duration: 1.5,
+      repeat: Infinity,
+      repeatType: 'reverse',
+      ease: 'easeInOut',
+    },
+  },
+};
 
 export default function ButtonAppBar(): React.JSX.Element {
   const { renderLanguage, language, changeLanguage } = useLanguage();
@@ -129,10 +145,11 @@ export default function ButtonAppBar(): React.JSX.Element {
                   },
                 }}
               >
-                <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
-                  {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
-                </Button>
-
+                <motion.div variants={bounceAnimation as unknown as Variants} initial="hidden" animate="visible">
+                  <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
+                    {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
+                  </Button>
+                </motion.div>
                 <IconButton onClick={handleClick} sx={{ color: '#232C65', fontSize: '12px' }}>
                   {language === Language.KA ? 'KA' : 'ENG'}
                 </IconButton>
