@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import { useLanguage } from '@/contexts/language-context';
 
@@ -14,7 +16,30 @@ import WaterIcon from '../icons/water-icon';
 import WineIcon from '../icons/wine-icon';
 import Card from './card/card';
 
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 export default function Equipment(): React.JSX.Element {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { renderLanguage } = useLanguage();
+
   const data = [
     {
       id: 1,
@@ -54,25 +79,29 @@ export default function Equipment(): React.JSX.Element {
     },
   ];
 
-  const { renderLanguage } = useLanguage();
-
   return (
-    <Box sx={{ backgroundColor: '#262626', padding: '128px 59px 128px 256px', display: 'flex', justifyContent: 'space-around', marginTop: '250px' }}>
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={containerVariants}
+      style={{ backgroundColor: '#262626', padding: '128px 59px 128px 256px', display: 'flex', justifyContent: 'space-around', marginTop: '250px' }}
+    >
       <Box>
         <Typography sx={{ fontSize: '32px', color: 'white', fontFeatureSettings: "'case' on" }}>
           {renderLanguage('მორგებული აღჭურვილობა თქვენი ინდუსტრიისთვის', 'Tailored Equipment for Your Industry')}
         </Typography>
         <Grid container spacing={2} sx={{ marginTop: '25px' }}>
-          {' '}
-          {/* Add spacing between cards */}
           {data.map((item) => (
             <Grid item xs={4} sm={4} md={4} key={item.title_ka}>
-              <Card key={item.id} {...item} />
+              <motion.div variants={itemVariants}>
+                <Card key={item.id} {...item} />
+              </motion.div>
             </Grid>
           ))}
         </Grid>
       </Box>
       <EquipmentIcon />
-    </Box>
+    </motion.div>
   );
 }

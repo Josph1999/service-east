@@ -3,17 +3,36 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import { useLanguage } from '@/contexts/language-context';
 
 import smalldots from '../../../public/assets/SmallDots.png';
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+    },
+  },
+};
+
 export default function TrustedPartner(): React.JSX.Element {
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const { renderLanguage } = useLanguage();
 
   return (
-    <Box
-      sx={{
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={containerVariants}
+      style={{
         padding: '0px 256px 64px 100px',
         backgroundColor: '#0A4AEB',
         display: 'flex',
@@ -32,6 +51,6 @@ export default function TrustedPartner(): React.JSX.Element {
           )}
         </Typography>
       </Box>
-    </Box>
+    </motion.div>
   );
 }
