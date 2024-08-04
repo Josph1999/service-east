@@ -8,8 +8,8 @@ import { useInView } from 'react-intersection-observer';
 
 import { useLanguage } from '@/contexts/language-context';
 
-import ecomacSrc from '../../../public/assets/Ecomac.png';
 import anaxSrc from '../../../public/assets/Anax.png';
+import ecomacSrc from '../../../public/assets/Ecomac.png';
 
 const itemVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -29,13 +29,24 @@ export default function Companies(): React.JSX.Element {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <Box sx={{ padding: '400px 256px' }}>
-      <Typography sx={{ fontSize: '32px', fontWeight: 700, fontFeatureSettings: "'case' on" }}>
+    <Box
+      sx={{
+        padding: { xs: '100px 16px', sm: '150px 24px', md: '200px 32px', lg: '400px 256px' },
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '32px' },
+          fontWeight: 700,
+          fontFeatureSettings: "'case' on",
+          textAlign: 'center',
+        }}
+      >
         {renderLanguage('ერთად მუშაობა გადაწყვეტილებების მიწვდების', 'Working Together to Deliver Solutions')}
       </Typography>
       <Grid container spacing={2} sx={{ marginTop: '25px' }} ref={ref}>
         {items.map((src, index) => (
-          <Grid item xs={4} sm={4} md={4} key={index}>
+          <Grid item xs={6} sm={4} md={4} lg={4} key={index}>
             <motion.div
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}

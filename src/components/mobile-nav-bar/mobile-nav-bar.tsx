@@ -13,7 +13,6 @@ import ListItemText from '@mui/material/ListItemText';
 import { useLanguage } from '@/contexts/language-context';
 
 import { headerLinks } from '../app-bar/links/links';
-import LinkLogo from '../icons/link-logo';
 import ServiceEastLogo from '../icons/service-east-logo';
 
 interface MobileNavBarProps {
@@ -35,6 +34,8 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
       role="presentation"
       sx={{
         width: '250px',
+        backgroundColor: '#0A1AAB',
+        color: '#fff',
       }}
     >
       <List>
@@ -44,7 +45,7 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
             router.push('/');
           }}
         >
-          <ServiceEastLogo width={35} />
+          <ServiceEastLogo width={200} />
         </IconButton>
         <Box sx={{ borderTop: '1px solid #232C65' }} />
         {headerLinks.map((item) => (
@@ -77,15 +78,9 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
             </ListItemButton>
           </ListItem>
         ))}
-        <a href="https://www.act.org.ge/" target="_blank" rel="noreferrer">
-          <Button
-            variant="contained"
-            sx={{ borderRadius: '0px', backgroundColor: '#F0F5FE', color: '#232C65', marginTop: '10px' }}
-            endIcon={<LinkLogo fill="#232C65" />}
-          >
-            {renderLanguage('ორგანიზებულია ACT Georgia-ის მიერ', 'Organized by ACT Georgia')}
-          </Button>
-        </a>
+        <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
+          {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
+        </Button>
       </List>
     </Box>
   );

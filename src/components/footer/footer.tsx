@@ -7,9 +7,9 @@ import { useLanguage } from '@/contexts/language-context';
 
 import { headerLinks } from '../app-bar/links/links';
 import LocationIcon from '../icons/location-icon';
+import MailIcon from '../icons/mail';
 import PhoneIcon from '../icons/phone';
 import ServiceEastLogo from '../icons/service-east-logo';
-import MailIcon from '../icons/mail';
 
 export default function Footer(): React.JSX.Element {
   const { renderLanguage } = useLanguage();
@@ -18,15 +18,22 @@ export default function Footer(): React.JSX.Element {
     <Box
       sx={{
         backgroundColor: '#181818',
-        padding: '185px 256px',
-        '@media (max-width: 760px)': {
-          padding: '24px',
-        },
+        padding: { xs: '24px', md: '60px 24px', lg: '185px 256px' },
         display: 'flex',
-        justifyContent: 'space-between',
+        flexDirection: { xs: 'column', md: 'row' },
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: { xs: '40px', md: '50px' },
       }}
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: { xs: '20px', md: '30px', lg: '50px' },
+          width: { xs: '100%', md: 'auto' },
+        }}
+      >
         <ServiceEastLogo />
         <Typography sx={{ color: 'white' }}>
           {renderLanguage(
@@ -34,36 +41,63 @@ export default function Footer(): React.JSX.Element {
             'Provider of Industrial Equipment Solutions'
           )}
         </Typography>
-        <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
+        <Button
+          variant="contained"
+          sx={{
+            borderRadius: '0px',
+            backgroundColor: '#1362FF',
+            color: '#fff',
+            alignSelf: { xs: 'center', md: 'flex-start' },
+          }}
+        >
           {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
         </Button>
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <Typography fontWeight={700} sx={{ color: 'white', fontSize: '20px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: { xs: '10px', md: '20px' },
+          width: { xs: '100%', md: 'auto' },
+          justifyContent: {xs: 'center', md: 'flex-start'},
+          alignItems: {xs: 'center', md: 'flex-start'},
+        }}
+      >
+        <Typography fontWeight={700} sx={{ color: 'white', fontSize: { xs: '16px', md: '20px' } }}>
           Service East
         </Typography>
-        {headerLinks.map((item) => {
-          return (
-            <Typography sx={{ color: 'white' }} key={item.path}>
-              {renderLanguage(item.name_ka, item.name_eng)}
-            </Typography>
-          );
-        })}
+        {headerLinks.map((item) => (
+          <Typography sx={{ color: 'white' }} key={item.path}>
+            {renderLanguage(item.name_ka, item.name_eng)}
+          </Typography>
+        ))}
       </Box>
-      <Box sx={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
-      <Typography fontWeight={700} sx={{ color: 'white', fontSize: '20px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: { xs: '20px', md: '30px' },
+          width: { xs: '100%', md: 'auto' },
+          justifyContent: {xs: 'center', md: 'flex-start'},
+          alignItems: {xs: 'center', md: 'flex-start'},
+        }}
+      >
+        <Typography
+          fontWeight={700}
+          sx={{ color: 'white', fontSize: { xs: '16px', md: '20px' } }}
+        >
           Contact info
         </Typography>
-        <Box sx={{ display: 'flex', gap: '12px' }}>
-          <PhoneIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('ტელ:', 'Tel:')} </Typography>{' '}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <PhoneIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('ტელ:', 'Tel:')} </Typography>
           <Typography sx={{ color: 'white' }}>866-330-4255</Typography>
         </Box>
-        <Box sx={{ display: 'flex', gap: '12px' }}>
-          <MailIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მეილი:', 'Mail:')} </Typography>{' '}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <MailIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მეილი:', 'Mail:')} </Typography>
           <Typography sx={{ color: 'white' }}>info@capelevator.com</Typography>
         </Box>
-        <Box sx={{ display: 'flex', gap: '12px' }}>
-          <LocationIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მეილი:', 'Mail:')} </Typography>{' '}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <LocationIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მისამართი:', 'Address:')} </Typography>
           <Typography sx={{ color: 'white' }}>111 Canfield Ave, Suite B11 Randolph, NJ 07869</Typography>
         </Box>
       </Box>

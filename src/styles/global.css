@@ -20,17 +20,35 @@
   --icon-fontSize-lg: 1.5rem;
 }
 
-body {
-  width: 1900px;
+.dotsImage {
+  align-self: flex-start;
 }
+
+@media only screen and (max-width: 1200px) {
+  .dotsImage {
+    align-self: center;
+  }
+  .keyConceptsWrapper {
+    flex-direction: column;
+    padding: 90px 128px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .keyConceptsWrapper {
+    padding: 80px 64px !important;
+  }
+}
+
+/* padding: { xs: '80px 24px', sm: '80px 64px', md: '90px 128px', lg: '128px 256px' }, */
 
 *:focus-visible {
   outline: 2px solid var(--mui-palette-primary-main);
 }
 
 @font-face {
-  font-family: "UpperCaseGeo";
-  src: url("../../public/fonts/NotoSansGeorgian-VariableFont_wdth\,wght.ttf") format("truetype");
+  font-family: 'UpperCaseGeo';
+  src: url('../../public/fonts/NotoSansGeorgian-VariableFont_wdth\,wght.ttf') format('truetype');
 }
 @keyframes moveBg {
   0% {
@@ -40,7 +58,6 @@ body {
     background-position: right;
   }
 }
-
 
 @keyframes rotateBg {
   0% {
@@ -65,11 +82,11 @@ body {
  * animation tracking-in-contract-bck
  * ----------------------------------------
  */
- @-webkit-keyframes tracking-in-contract-bck {
+@-webkit-keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(400px);
-            transform: translateZ(400px);
+    transform: translateZ(400px);
     opacity: 0;
   }
   40% {
@@ -77,21 +94,21 @@ body {
   }
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
 
 .tracking-in-contract-bck {
-	-webkit-animation: tracking-in-contract-bck 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	        animation: tracking-in-contract-bck 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: tracking-in-contract-bck 4s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck 4s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 @keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(400px);
-            transform: translateZ(400px);
+    transform: translateZ(400px);
     opacity: 0;
   }
   40% {
@@ -99,11 +116,10 @@ body {
   }
   100% {
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
     opacity: 1;
   }
 }
-
 
 html {
   height: 100%;
@@ -112,4 +128,3 @@ html {
 body {
   height: 100%;
 }
-

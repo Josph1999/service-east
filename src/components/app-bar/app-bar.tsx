@@ -89,7 +89,7 @@ export default function ButtonAppBar(): React.JSX.Element {
               </IconButton>
             </Box>
           ) : null}
-          <Box sx={{ display: 'flex', gap: '20px' }}>
+          <Box sx={{ display: 'flex', gap: '20px', width: '100%', justifyContent: 'space-between' }}>
             {windowWidth > 1200 ? (
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
                 {headerLinks.map((link) => (
@@ -115,7 +115,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                   setMobileNav(true);
                 }}
               >
-                <MenuIcon sx={{ color: '#232C65' }} />
+                <MenuIcon sx={{ color: 'white' }} />
               </IconButton>
             )}
             {windowWidth <= 1200 ? (
@@ -124,11 +124,11 @@ export default function ButtonAppBar(): React.JSX.Element {
                   router.push('/');
                 }}
               >
-                <ServiceEastLogo width={windowWidth > 1200 ? 48 : 35} />
+                <ServiceEastLogo width={windowWidth > 1200 ? 28 : 200} />
               </IconButton>
             ) : null}
             {windowWidth <= 1200 ? (
-              <IconButton onClick={handleClick} sx={{ color: '#232C65', fontSize: '12px' }}>
+              <IconButton onClick={handleClick} sx={{ color: 'white', fontSize: '12px' }}>
                 {language === Language.KA ? 'KA' : 'ENG'}
               </IconButton>
             ) : null}
@@ -150,7 +150,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                     {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
                   </Button>
                 </motion.div>
-                <IconButton onClick={handleClick} sx={{ color: '#232C65', fontSize: '12px' }}>
+                <IconButton onClick={handleClick} sx={{ color: 'white', fontSize: '12px' }}>
                   {language === Language.KA ? 'KA' : 'ENG'}
                 </IconButton>
               </Box>

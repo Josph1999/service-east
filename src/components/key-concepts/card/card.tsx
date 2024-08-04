@@ -25,16 +25,18 @@ export default function Card(props: CardProps): React.JSX.Element {
   return (
     <Box
       sx={{
-        width: '459px',
-        height: '539px',
+        width: '100%',
+        height: '500px',
         backgroundImage: `url(${image})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'left',
         backgroundSize: 'cover',
-        padding: '391px 24px 24px 24px',
         cursor: 'pointer',
         filter: 'grayscale(100%)',
         transition: 'filter 0.3s ease-in-out',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end', // Align text at the bottom
         '&:hover': {
           filter: 'grayscale(0%)',
         },
@@ -43,10 +45,13 @@ export default function Card(props: CardProps): React.JSX.Element {
           visibility: 'visible',
           maxHeight: '200px', // Set to a reasonable value based on your content
         },
+        '@media (max-width: 1000px)': {
+          height: '500px',
+        },
       }}
     >
-      <Box sx={{ borderRadius: '0px 8px 8px 8px', padding: '32px', backgroundColor: '#fff' }}>
-        <Typography sx={{ fontFeatureSettings: "'case' on", fontWeight: 700 }}>
+      <Box sx={{ padding: '24px', backgroundColor: '#fff' }}>
+        <Typography sx={{ fontFeatureSettings: "'case' on", fontWeight: 700, width: '100%' }}>
           {renderLanguage(titleKa, titlEng)}
         </Typography>
         <Typography

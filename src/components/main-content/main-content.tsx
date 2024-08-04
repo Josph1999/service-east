@@ -43,16 +43,7 @@ export default function MainContent(): React.JSX.Element {
     <Box
       sx={{
         position: 'relative',
-        padding: '128px 256px',
-        '@media (max-width: 1200px)': {
-          padding: '90px 128px',
-        },
-        '@media (max-width: 1000px)': {
-          padding: '80px 64px',
-        },
-        '@media (max-width: 760px)': {
-          padding: '80px 24px',
-        },
+        padding: { xs: '80px 24px', sm: '80px 64px', md: '90px 128px', lg: '128px 256px' },
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 3s ease, transform 0.5s ease',
@@ -70,24 +61,26 @@ export default function MainContent(): React.JSX.Element {
           backgroundPosition: 'right',
           zIndex: -1,
           animation: inView ? 'rotateBg 3s ease-out forwards' : 'none',
-          transform: 'rotateX(180deg)'
+          transform: 'rotateX(180deg)',
         },
       }}
       ref={ref}
     >
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Image width={700} height={800} src={mainFactory} alt="Factory Image" />
-        <Box sx={{ width: '575px' }}>
-          <Typography sx={{ fontSize: '40px', fontWeight: 700, fontFeatureSettings: "'case' on" }} className='tracking-in-contract-bck'>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: 'center', gap: '40px' }}>
+        <Box sx={{ maxWidth: { xs: '100%', md: '50%' }, mb: { xs: '24px', md: 0 } }}>
+          <Image width={700} height={800} src={mainFactory} alt="Factory Image" style={{ width: '100%', height: 'auto' }} />
+        </Box>
+        <Box sx={{ width: { xs: '100%', md: '50%' }, textAlign: { xs: 'center', md: 'left' }}}>
+          <Typography sx={{ fontSize: { xs: '30px', sm: '35px', md: '40px' }, fontWeight: 700, fontFeatureSettings: "'case' on" }} className='tracking-in-contract-bck'>
             {renderLanguage('სამრეწველო აღჭურვილობის მიმწოდებელი', 'Provider of Industrial Equipment Solutions')}
           </Typography>
-          <Typography>
+          <Typography sx={{ mt: '16px' }}>
             {renderLanguage(
               'გლობალური კომპანია კვების, სასმელების და ქიმიური მრეწველობის გამოცდილებით.',
               'A global company with experience in food, beverage and chemical industries.'
             )}
           </Typography>
-          <Box sx={{ display: 'flex', gap: '20px', marginTop: '30px' }}>
+          <Box sx={{ display: 'flex', gap: '20px', marginTop: '30px', justifyContent: { xs: 'center', md: 'flex-start' } }}>
             <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
               {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
             </Button>

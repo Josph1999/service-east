@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useWindowWidth } from '@/helpers/window-width';
 import { Box, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -79,21 +80,39 @@ export default function Equipment(): React.JSX.Element {
     },
   ];
 
+  const windowWidth = useWindowWidth();
+
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      style={{ backgroundColor: '#262626', padding: '128px 59px 128px 256px', display: 'flex', justifyContent: 'space-around', marginTop: '250px' }}
+      style={{
+        backgroundColor: '#262626',
+        padding: '128px 59px',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
-      <Box>
-        <Typography sx={{ fontSize: '32px', color: 'white', fontFeatureSettings: "'case' on" }}>
+      <Box sx={{ textAlign: 'center' }}>
+        <Typography
+          sx={{
+            fontSize: { xs: '24px', md: '32px' },
+            color: 'white',
+            fontFeatureSettings: "'case' on",
+            marginBottom: '25px',
+          }}
+        >
           {renderLanguage('მორგებული აღჭურვილობა თქვენი ინდუსტრიისთვის', 'Tailored Equipment for Your Industry')}
         </Typography>
-        <Grid container spacing={2} sx={{ marginTop: '25px' }}>
+        <Grid container spacing={2}>
           {data.map((item) => (
-            <Grid item xs={4} sm={4} md={4} key={item.title_ka}>
+            <Grid item xs={12} sm={6} md={4} key={item.title_ka}>
               <motion.div variants={itemVariants}>
                 <Card key={item.id} {...item} />
               </motion.div>
@@ -101,7 +120,11 @@ export default function Equipment(): React.JSX.Element {
           ))}
         </Grid>
       </Box>
-      <EquipmentIcon />
+      {windowWidth > 1300 ? (
+        <Box sx={{ position: 'absolute', bottom: 350, right: 50 }}>
+          <EquipmentIcon />
+        </Box>
+      ) : null}
     </motion.div>
   );
 }

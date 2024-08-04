@@ -1,61 +1,89 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import { Box } from '@mui/material';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 import Card from './card/card';
 import { data } from './data';
-
-const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-};
 
 export default function KeyConcepts(): React.JSX.Element {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
 
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={containerVariants}
-      style={{
-        padding: '128px 256px',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-        backgroundPosition: 'right',
+    <Box
+      sx={{
         backgroundImage: `url(/assets/DotsBackground.png)`,
-        display: 'flex',
-        justifyContent: 'space-between',
+        padding: '128px 256px',
+        '@media (max-width: 1500px)': {
+          padding: '128px 128px',
+        },
+        '@media (max-width: 1200px)': {
+          padding: '90px 128px',
+        },
+        '@media (max-width: 1000px)': {
+          padding: '80px 64px',
+        },
+        '@media (max-width: 760px)': {
+          padding: '50px 24px',
+        },
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 0.5s ease, transform 0.5s ease',
       }}
+      ref={ref}
     >
-      {data.map((item) => (
-        <motion.div key={item.title_ka} variants={itemVariants}>
-          <Card {...item} />
-        </motion.div>
-      ))}
-    </motion.div>
+      <Swiper
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+          reverseDirection: true,
+        }}
+        modules={[Navigation, Autoplay]}
+        loop
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        className="mySwiper"
+        breakpoints={{
+          360: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          920: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1224: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
+        style={{
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'contain',
+          backgroundPosition: 'right',
+        }}
+      >
+        {data.map((item) => (
+          <SwiperSlide key={item.title_eng}>
+            <Card {...item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   );
 }
