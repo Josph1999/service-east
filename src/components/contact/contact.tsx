@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Box, Button, FormHelperText, TextField, Typography, Snackbar, Alert } from '@mui/material';
+import { Alert, Box, Button, FormHelperText, Snackbar, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
+import { motion } from 'framer-motion';
 import * as Yup from 'yup';
 
 import { useLanguage } from '@/contexts/language-context';
@@ -54,61 +55,95 @@ export default function Contact(): React.JSX.Element {
     },
   });
 
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(/assets/Rectangle.png)`, // replace with your SVG file path
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-        backgroundPosition: 'right',
-      }}
-    >
+    <motion.div variants={fadeInVariants} initial="hidden" animate="visible" transition={{ duration: 0.6 }}>
       <Box
         sx={{
-          padding: '128px',
-          '@media (max-width: 800px)': {
-            padding: '20px',
-            marginTop: '120px',
-          },
+          backgroundImage: `url(/assets/Rectangle.png)`, // replace with your SVG file path
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'contain',
+          backgroundPosition: 'right',
         }}
       >
-        <Typography sx={{ fontFeatureSettings: "'case' on" }} fontSize={32}>
-          {renderLanguage('კონტაქტი', 'Contact')}
-        </Typography>
-        <Typography sx={{ fontFeatureSettings: "'case' on" }}>
-          {renderLanguage(
-            'ინფორმაციის მისაღებად ან ნებისმიერ სხვა საკითხთან დაკავშირებით, დაგვიკავშირდით: ',
-            'For information or any other matter, contact us:'
-          )}
-        </Typography>
         <Box
-          marginTop={5}
-          marginBottom={5}
           sx={{
-            display: 'flex',
-            gap: '20px',
+            padding: '128px',
             '@media (max-width: 800px)': {
-              flexDirection: 'column',
+              padding: '20px',
+              marginTop: '120px',
             },
           }}
         >
-          <Button
-            fullWidth
+          <Typography sx={{ fontFeatureSettings: "'case' on" }} fontSize={32}>
+            {renderLanguage('კონტაქტი', 'Contact')}
+          </Typography>
+          <Typography sx={{ fontFeatureSettings: "'case' on" }}>
+            {renderLanguage(
+              'ინფორმაციის მისაღებად ან ნებისმიერ სხვა საკითხთან დაკავშირებით, დაგვიკავშირდით: ',
+              'For information or any other matter, contact us:'
+            )}
+          </Typography>
+          <Box
+            marginTop={5}
+            marginBottom={5}
             sx={{
-              borderBottom: '1px solid #232C65',
-              borderRadius: '0px',
-              color: '#232C65',
+              display: 'flex',
+              gap: '20px',
+              '@media (max-width: 800px)': {
+                flexDirection: 'column',
+              },
             }}
           >
-            <a
-              href="tel:+380443443901"
-              style={{
-                color: '#4338CA',
-                textDecoration: 'none',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '10px',
+            <Button
+              fullWidth
+              sx={{
+                borderBottom: '1px solid #232C65',
+                borderRadius: '0px',
+                color: '#232C65',
+              }}
+            >
+              <a
+                href="tel:+380443443901"
+                style={{
+                  color: '#4338CA',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
+              >
+                <Box
+                  sx={{
+                    color: '#4338CA',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '10px',
+                    '@media (max-width: 800px)': {
+                      display: 'flex',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                    },
+                  }}
+                >
+                  <PhoneIcon /> +380 (44) 344 39 01
+                </Box>
+              </a>
+            </Button>
+            <Button
+              fullWidth
+              sx={{
+                borderBottom: '1px solid #232C65',
+                borderRadius: '0px',
+                textTransform: 'none',
+                color: '#232C65',
               }}
             >
               <Box
@@ -126,187 +161,165 @@ export default function Contact(): React.JSX.Element {
                   },
                 }}
               >
-                <PhoneIcon /> +380 (44) 344 39 01
-              </Box>
-            </a>
-          </Button>
-          <Button
-            fullWidth
-            sx={{
-              borderBottom: '1px solid #232C65',
-              borderRadius: '0px',
-              textTransform: 'none',
-              color: '#232C65',
-            }}
-          >
-            <Box
-              sx={{
-                color: '#4338CA',
-                textDecoration: 'none',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '10px',
-                '@media (max-width: 800px)': {
-                  display: 'flex',
-                  justifyContent: 'center',
-                  flexDirection: 'column',
-                },
-              }}
-            >
-              {' '}
-              <DirectionIcon />{' '}
-              {renderLanguage(
-                `SERVICE EAST LLC
+                {' '}
+                <DirectionIcon />{' '}
+                {renderLanguage(
+                  `SERVICE EAST LLC
 "Horizon Office Tower"
 42-44 Shovkovychna Str, office 2-A
 01601 Kyiv Ukraine`,
-                `SERVICE EAST LLC
+                  `SERVICE EAST LLC
 "Horizon Office Tower"
 42-44 Shovkovychna Str, office 2-A
 01601 Kyiv Ukraine`
-              )}
-            </Box>
-          </Button>
-          <Button
-            fullWidth
-            sx={{
-              borderBottom: '1px solid #232C65',
-              borderRadius: '0px',
-              textTransform: 'none',
-              color: '#232C65',
-            }}
-          >
-            <a
-              href="mailto:info@service-east.com"
-              style={{
-                color: '#4338CA',
-                textDecoration: 'none',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '10px',
+                )}
+              </Box>
+            </Button>
+            <Button
+              fullWidth
+              sx={{
+                borderBottom: '1px solid #232C65',
+                borderRadius: '0px',
+                textTransform: 'none',
+                color: '#232C65',
               }}
             >
-              <Box
-                sx={{
+              <a
+                href="mailto:info@service-east.com"
+                style={{
                   color: '#4338CA',
                   textDecoration: 'none',
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
                   gap: '10px',
-                  '@media (max-width: 800px)': {
+                }}
+              >
+                <Box
+                  sx={{
+                    color: '#4338CA',
+                    textDecoration: 'none',
                     display: 'flex',
                     justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '10px',
+                    '@media (max-width: 800px)': {
+                      display: 'flex',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                    },
+                  }}
+                >
+                  <MailIcon /> info@service-east.com
+                </Box>
+              </a>
+            </Button>
+          </Box>
+          <GoogleMaps />
+          <form noValidate onSubmit={formik.handleSubmit}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '80px' }}>
+              <Typography sx={{ fontSize: '26px', fontWeight: 700, fontFeatureSettings: "'case' on" }}>
+                {renderLanguage('კონტაქტის ფორმა', 'Contact Form')}
+              </Typography>
+
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: '150px',
+                  '@media (max-width: 700px)': {
                     flexDirection: 'column',
+                    gap: '40px',
                   },
                 }}
               >
-                <MailIcon /> info@service-east.com
+                <TextField
+                  error={Boolean(formik.touched.name && formik.errors.name)}
+                  helperText={formik.touched.name ? formik.errors.name : null}
+                  label={renderLanguage('სახელი', 'Name')}
+                  name="name"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.name}
+                  required
+                  fullWidth
+                  variant="standard"
+                />
+                <TextField
+                  error={Boolean(formik.touched.last_name && formik.errors.last_name)}
+                  helperText={formik.touched.last_name ? formik.errors.last_name : null}
+                  label={renderLanguage('გვარი', 'Last Name')}
+                  name="last_name"
+                  onBlur={formik.handleBlur}
+                  required
+                  onChange={formik.handleChange}
+                  value={formik.values.last_name}
+                  fullWidth
+                  variant="standard"
+                />
               </Box>
-            </a>
-          </Button>
-        </Box>
-        <GoogleMaps />
-        <form noValidate onSubmit={formik.handleSubmit}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '80px' }}>
-            <Typography sx={{ fontSize: '26px', fontWeight: 700, fontFeatureSettings: "'case' on" }}>
-              {renderLanguage('კონტაქტის ფორმა', 'Contact Form')}
-            </Typography>
-
-            <Box
-              sx={{
-                display: 'flex',
-                gap: '150px',
-                '@media (max-width: 700px)': {
-                  flexDirection: 'column',
-                  gap: '40px',
-                },
-              }}
-            >
               <TextField
-                error={Boolean(formik.touched.name && formik.errors.name)}
-                helperText={formik.touched.name ? formik.errors.name : null}
-                label={renderLanguage('სახელი', 'Name')}
-                name="name"
+                error={Boolean(formik.touched.email && formik.errors.email)}
+                helperText={formik.touched.email ? formik.errors.email : null}
+                label={renderLanguage('მეილი', 'Email')}
+                name="email"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
-                value={formik.values.name}
                 required
+                value={formik.values.email}
                 fullWidth
                 variant="standard"
               />
               <TextField
-                error={Boolean(formik.touched.last_name && formik.errors.last_name)}
-                helperText={formik.touched.last_name ? formik.errors.last_name : null}
-                label={renderLanguage('გვარი', 'Last Name')}
-                name="last_name"
+                error={Boolean(formik.touched.subject && formik.errors.subject)}
+                helperText={formik.touched.subject ? formik.errors.subject : null}
+                label={renderLanguage('სათაური', 'Subject')}
+                name="subject"
                 onBlur={formik.handleBlur}
-                required
                 onChange={formik.handleChange}
-                value={formik.values.last_name}
+                required
+                value={formik.values.subject}
                 fullWidth
                 variant="standard"
               />
+              <textarea
+                name="message"
+                value={formik.values.message}
+                onChange={formik.handleChange}
+                required
+                onBlur={formik.handleBlur}
+                placeholder={renderLanguage('აღწერა მაქსიმუმ 250 სიმბოლო *', 'Message Max 250 symbols *')}
+                style={{
+                  width: '100%',
+                  border: 'none',
+                  borderBottom: '1px solid #000',
+                  resize: 'none',
+                  padding: '8px 0',
+                  fontFamily: 'UpperCaseGeo',
+                  fontSize: '16px',
+                  backgroundColor: 'transparent',
+                }}
+                rows={5}
+              />
+              <FormHelperText sx={{ color: 'red' }}>
+                {formik.touched.message ? formik.errors.message : null}
+              </FormHelperText>
+              <Button variant="outlined" type="submit">
+                {renderLanguage('გაგზავნა', 'Send')}
+              </Button>
             </Box>
-            <TextField
-              error={Boolean(formik.touched.email && formik.errors.email)}
-              helperText={formik.touched.email ? formik.errors.email : null}
-              label={renderLanguage('მეილი', 'Email')}
-              name="email"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              required
-              value={formik.values.email}
-              fullWidth
-              variant="standard"
-            />
-            <TextField
-              error={Boolean(formik.touched.subject && formik.errors.subject)}
-              helperText={formik.touched.subject ? formik.errors.subject : null}
-              label={renderLanguage('სათაური', 'Subject')}
-              name="subject"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              required
-              value={formik.values.subject}
-              fullWidth
-              variant="standard"
-            />
-            <textarea
-              name="message"
-              value={formik.values.message}
-              onChange={formik.handleChange}
-              required
-              onBlur={formik.handleBlur}
-              placeholder={renderLanguage('აღწერა მაქსიმუმ 250 სიმბოლო *', 'Message Max 250 symbols *')}
-              style={{
-                width: '100%',
-                border: 'none',
-                borderBottom: '1px solid #000',
-                resize: 'none',
-                padding: '8px 0',
-                fontFamily: 'UpperCaseGeo',
-                fontSize: '16px',
-                backgroundColor: 'transparent',
-              }}
-              rows={5}
-            />
-            <FormHelperText sx={{ color: 'red' }}>
-              {formik.touched.message ? formik.errors.message : null}
-            </FormHelperText>
-            <Button variant="outlined" type="submit">
-              {renderLanguage('გაგზავნა', 'Send')}
-            </Button>
-          </Box>
-        </form>
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}   anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
-          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }} >
-            {renderLanguage('ფორმა წარმატებით გაიგზავნა!', 'Form submitted successfully!')}
-          </Alert>
-        </Snackbar>
+          </form>
+          <Snackbar
+            open={open}
+            autoHideDuration={6000}
+            onClose={handleClose}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+          >
+            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+              {renderLanguage('ფორმა წარმატებით გაიგზავნა!', 'Form submitted successfully!')}
+            </Alert>
+          </Snackbar>
+        </Box>
       </Box>
-    </Box>
+    </motion.div>
   );
 }

@@ -115,7 +115,7 @@ export function QuillEditor(props: QuillEditorProps): React.JSX.Element {
 
   return (
     <QuillEditorRoot className={styles.quillEditor}>
-      <Quill onChange={onChange} placeholder={placeholder} value={value} modules={{ toolbar: false }}  />
+      <Quill onChange={onChange} placeholder={placeholder} value={value} modules={{ toolbar: true }}  />
     </QuillEditorRoot>
   );
 }

@@ -13,74 +13,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Speaker {
-  id           String   @id @default(uuid())
-  name_ka      String
-  name_eng     String
-  position_ka  String
-  position_eng String
-  bio_ka       String?
-  bio_eng      String?
-  image        Media[]
-  created_at   DateTime @default(now())
-  updated_at   DateTime @updatedAt
-}
-
-model Media {
+model File {
   id            String   @id @default(uuid())
   url           String
   original_name String
   name          String
   media_type    String
-  type          String
-  speaker_id    String?
-  speaker       Speaker? @relation(fields: [speaker_id], references: [id])
+  lang          String
+  vacancy_id    String
+  vacancy       Vacancy  @relation(fields: [vacancy_id], references: [id])
   created_at    DateTime @default(now())
-  updated_at    DateTime @updatedAt
-  news          News?    @relation(fields: [news_id], references: [id])
-  news_id       String?
+  updated_at    DateTime @default(now()) @updatedAt
 }
 
-model News {
+model Vacancy {
   id              String   @id @default(uuid())
   title_ka        String
   title_eng       String
   description_ka  String
   description_eng String
-  images          Media[]
+  files           File[]
   created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
-}
-
-model AgendaDate {
-  id         String   @id @default(uuid())
-  date       DateTime @default(now())
-  name       String?
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  agenda     Agenda[]
-}
-
-model Agenda {
-  id              String     @id @default(uuid())
-  location_ka     String
-  location_eng    String
-  activity_ka     String
-  activity_eng    String
-  description_ka  String?
-  description_eng String?
-  agenda_date_id  String
-  agenda_date     AgendaDate @relation(fields: [agenda_date_id], references: [id])
-  time            DateTime   @default(now())
-  created_at      DateTime   @default(now())
-  updated_at      DateTime   @updatedAt
-}
-
-model Sponsors {
-  id         String   @id @default(uuid())
-  link       String
-  logo_url   String
-  image_name String
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  updated_at      DateTime @default(now()) @updatedAt
 }

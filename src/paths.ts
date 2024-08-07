@@ -17,6 +17,8 @@ export const paths = {
     addSponsor: '/dashboard/add-sponsor',
     galleryUpload: '/dashboard/gallery',
     agenda: '/dashboard/agendas',
+    addVacancy: '/dashboard/add-vacancy',
+    publishedVacancies: '/dashboard/published-vacancies',
   },
   errors: { notFound: '/errors/not-found' },
 } as const;
