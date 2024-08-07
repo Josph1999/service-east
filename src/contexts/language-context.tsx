@@ -22,7 +22,7 @@ const defaultLanguageContext: LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType>(defaultLanguageContext);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }): React.ReactElement {
-  const [language, setLanguage] = useState(Language.KA);
+  const [language, setLanguage] = useState(Language.ENG);
 
   const changeLanguage = (newLanguage: Language): Language => {
     setLanguage(newLanguage);
@@ -37,7 +37,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }): R
     if (language === Language.ENG) {
       return eng;
     }
-    return ka;
+    return eng;
   };
 
   return (
