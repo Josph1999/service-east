@@ -11,8 +11,8 @@ export const headerLinks = [
   },
   {
     name_ka: 'კარიერა',
-    name_eng: 'Careers',
-    path: '/careers',
+    name_eng: 'Career',
+    path: '/career',
   },
   {
     name_ka: 'კონტაქტი',
