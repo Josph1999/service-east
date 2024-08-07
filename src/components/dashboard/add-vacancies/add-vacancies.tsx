@@ -14,10 +14,8 @@ import * as Yup from 'yup';
 import { paths } from '@/paths';
 import { useLanguage } from '@/contexts/language-context';
 import { QuillEditor } from '@/components/quill-editor/quill-editor';
-
-import { type ResponseInterface } from '../speakers/interfaces/response.interface';
 import styles from './add-vacancies.module.css';
-import { Vacancy } from '@/components/interfaces/response.interface';
+import { ResponseInterface, Vacancy } from '@/components/interfaces/response.interface';
 
 export default function AddVacanciesForm(): React.JSX.Element {
   const { renderLanguage } = useLanguage();

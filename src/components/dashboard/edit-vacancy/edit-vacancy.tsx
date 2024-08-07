@@ -13,10 +13,9 @@ import * as Yup from 'yup';
 
 import { paths } from '@/paths';
 import { useLanguage } from '@/contexts/language-context';
-import { Vacancy } from '@/components/interfaces/response.interface';
+import { ResponseInterface, Vacancy } from '@/components/interfaces/response.interface';
 import { QuillEditor } from '@/components/quill-editor/quill-editor';
 
-import { type ResponseInterface } from '../speakers/interfaces/response.interface';
 import styles from './edit-vacancy.module.css';
 
 export default function EditVacancyForm(): React.JSX.Element {
