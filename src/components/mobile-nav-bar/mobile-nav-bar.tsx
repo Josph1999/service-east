@@ -78,7 +78,13 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
             </ListItemButton>
           </ListItem>
         ))}
-        <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
+        <Button
+          variant="contained"
+          sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}
+          onClick={() => {
+            router.push('/contact');
+          }}
+        >
           {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
         </Button>
       </List>

@@ -146,7 +146,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                 }}
               >
                 <motion.div variants={bounceAnimation as unknown as Variants} initial="hidden" animate="visible">
-                  <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
+                  <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }} onClick={() => {router.push('/contact')}}>
                     {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
                   </Button>
                 </motion.div>

@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '@/contexts/language-context';
 
 import mainFactory from '../../../public/assets/FactoryMain.png';
+import { useRouter } from 'next/navigation';
 
 export default function MainContent(): React.JSX.Element {
   const { renderLanguage } = useLanguage();
@@ -16,6 +17,8 @@ export default function MainContent(): React.JSX.Element {
     triggerOnce: true,
   });
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     const playVideo = async () => {
@@ -81,7 +84,7 @@ export default function MainContent(): React.JSX.Element {
             )}
           </Typography>
           <Box sx={{ display: 'flex', gap: '20px', marginTop: '30px', justifyContent: { xs: 'center', md: 'flex-start' } }}>
-            <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}>
+            <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }} onClick={() => {router.push('/contact')}}>
               {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
             </Button>
             <Button variant="outlined" sx={{ borderRadius: '0px', color: 'black', borderColor: 'black' }}>

@@ -10,9 +10,12 @@ import LocationIcon from '../icons/location-icon';
 import MailIcon from '../icons/mail';
 import PhoneIcon from '../icons/phone';
 import ServiceEastLogo from '../icons/service-east-logo';
+import { useRouter } from 'next/navigation';
 
 export default function Footer(): React.JSX.Element {
   const { renderLanguage } = useLanguage();
+
+  const router = useRouter()
 
   return (
     <Box
@@ -49,6 +52,7 @@ export default function Footer(): React.JSX.Element {
             color: '#fff',
             alignSelf: { xs: 'center', md: 'flex-start' },
           }}
+          onClick={() => {router.push('/contact')}}
         >
           {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
         </Button>
@@ -67,7 +71,7 @@ export default function Footer(): React.JSX.Element {
           Service East
         </Typography>
         {headerLinks.map((item) => (
-          <Typography sx={{ color: 'white' }} key={item.path}>
+          <Typography sx={{ color: 'white' }} key={item.path} onClick={() => {router.push(item.path)}}>
             {renderLanguage(item.name_ka, item.name_eng)}
           </Typography>
         ))}
