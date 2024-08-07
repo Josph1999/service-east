@@ -17,6 +17,7 @@ export interface NextAppDirEmotionCacheProviderProps {
   children: React.ReactNode;
 }
 
+// Adapted from https://github.com/garronej/tss-react/blob/main/src/next/appDir.tsx
 export default function NextAppDirEmotionCacheProvider(props: NextAppDirEmotionCacheProviderProps): React.JSX.Element {
   const { options, CacheProvider = DefaultCacheProvider, children } = props;
 
@@ -57,16 +58,17 @@ export default function NextAppDirEmotionCacheProvider(props: NextAppDirEmotionC
 
     inserted.forEach(({ name, isGlobal }) => {
       const style = registry.cache.inserted[name];
-
-      if (typeof style !== 'boolean') {
+    
+      if (typeof style === 'string') { // Ensure `style` is a string
         if (isGlobal) {
-          globals.push({ name, style: style as unknown as string });
+          globals.push({ name, style });
         } else {
           styles += style;
           dataEmotionAttribute += ` ${name}`;
         }
       }
     });
+    
 
     return (
       <React.Fragment>
