@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 import { Box, Button, Typography } from '@mui/material';
 import axios, { AxiosResponse } from 'axios';
@@ -9,8 +8,6 @@ import { motion } from 'framer-motion';
 import parser from 'html-react-parser';
 
 import { useLanguage } from '@/contexts/language-context';
-
-import smalldots from '../../../public/assets/SmallDots.png';
 import CareerBackIcon from '../icons/career-back-icon';
 import { ResponseInterface, Vacancy } from '../interfaces/response.interface';
 
@@ -53,7 +50,7 @@ export default function CareerDetails(): React.JSX.Element {
   return (
     <Box
       sx={{
-        backgroundImage: `url(/assets/Rectangle.png)`,
+        backgroundImage: `url(/assets/DotsBackground.png)`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
         backgroundPosition: 'top',
@@ -68,7 +65,6 @@ export default function CareerDetails(): React.JSX.Element {
         variants={fadeIn}
         sx={{
           marginTop: '60px',
-          backgroundColor: '#0A4AEB',
           paddingRight: '256px',
           display: 'flex',
           padding: '64px 0px',
@@ -87,52 +83,68 @@ export default function CareerDetails(): React.JSX.Element {
           },
         }}
       >
-        <Box>
-          <Button
-            variant="contained"
-            startIcon={<CareerBackIcon />}
-            sx={{ backgroundColor: '#fff', borderRadius: '0px', color: '#0A4AEB' }}
-            onClick={() => {
-              router.push('/career');
-            }}
-          >
-            {renderLanguage('კარიერა', 'Back To Career')}
-          </Button>
-          <Typography
-            component={motion.div}
-            variants={fadeInUp}
-            sx={{
-              fontSize: '32px',
-              fontWeight: 700,
-              fontFeatureSettings: "'case' on",
-              color: 'white',
-              paddingTop: '34px',
-              '@media (max-width: 900px)': {
-                padding: '0px',
-                textAlign: 'center',
-              },
-            }}
-          >
-            {renderLanguage(vacancy ? vacancy.title_ka : '', vacancy ? vacancy.title_eng : '')}
-          </Typography>
-        </Box>
-        <Image width={92} height={106} src={smalldots} alt="Small Dots Image" className="dotsImage" />
-      </Box>
-      <Box
-        sx={{
-          padding: { xs: '80px 24px', sm: '80px 64px', md: '90px 128px', lg: '128px 256px' },
-        }}
-      >
-        {parser(renderLanguage(vacancy ? vacancy.description_ka : '', vacancy ? vacancy.description_eng : ''))}
-        <Box>
-          {vacancy?.files.length && vacancy?.files.find((file) => file.lang === language.toLocaleLowerCase()) ? (
-            <Button variant="contained" fullWidth>
+        <Box
+          sx={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'space-between',
+            padding: '64px 256px',
+            '@media (max-width: 1200px)': {
+              padding: '64px 128px',
+            },
+            '@media (max-width: 1000px)': {
+              padding: '24px 64px',
+              flexDirection: 'column',
+            },
+            '@media (max-width: 760px)': {
+              padding: '24px 24px',
+            },
+            backgroundColor: 'white',
+          }}
+        >
+          <Box>
+            <Button
+              variant="contained"
+              startIcon={<CareerBackIcon />}
+              sx={{
+                backgroundColor: '#fff',
+                borderRadius: '0px',
+                color: 'black',
+                '&:hover': {
+                  backgroundColor: 'white',
+                },
+              }}
+              onClick={() => {
+                router.push('/career');
+              }}
+            >
+              {renderLanguage('კარიერა', 'Back To Career')}
+            </Button>
+            <Typography
+              component={motion.div}
+              variants={fadeInUp}
+              sx={{
+                fontSize: '32px',
+                fontWeight: 700,
+                fontFeatureSettings: "'case' on",
+                paddingTop: '34px',
+                '@media (max-width: 900px)': {
+                  padding: '0px',
+                  textAlign: 'center',
+                },
+              }}
+            >
+              {renderLanguage(vacancy ? vacancy.title_ka : '', vacancy ? vacancy.title_eng : '')}
+            </Typography>
+          </Box>
+          <Box>
+            {vacancy?.files.length && vacancy?.files.find((file) => file.lang === language.toLocaleLowerCase()) ? (
               <a
                 href={vacancy?.files.find((file) => file.lang === language.toLocaleLowerCase())?.url}
                 target="_blank"
                 rel="noreferrer"
                 style={{
-                  color: '#fff',
+                  color: 'black',
                   textDecoration: 'none',
                   display: 'flex',
                   justifyContent: 'center',
@@ -140,11 +152,20 @@ export default function CareerDetails(): React.JSX.Element {
                   gap: '10px',
                 }}
               >
-                {renderLanguage('PDF ვერსია', 'PDF Version')}
+                <Button variant="outlined" sx={{ color: 'black', borderColor: 'black', borderRadius: '0px' }}>
+                  {renderLanguage('PDF ვერსია', 'PDF Version')}
+                </Button>
               </a>
-            </Button>
-          ) : null}
+            ) : null}
+          </Box>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          padding: { xs: '80px 24px', sm: '80px 64px', md: '90px 128px', lg: '128px 256px' },
+        }}
+      >
+        {parser(renderLanguage(vacancy ? vacancy.description_ka : '', vacancy ? vacancy.description_eng : ''))}
       </Box>
     </Box>
   );

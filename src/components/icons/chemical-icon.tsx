@@ -3,23 +3,23 @@ import React from 'react';
 export default function ChemicalIcon(): React.JSX.Element {
   return (
     <svg
-      width="65"
+      width="64"
       height="64"
-      viewBox="0 0 65 64"
+      viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <rect x="0.666748" width="64" height="64" fill="url(#pattern0_53_138)" />
+      <rect width="64" height="64" fill="url(#pattern0_161_3554)" />
       <defs>
-        <pattern id="pattern0_53_138" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0_53_138" transform="scale(0.015625)" />
+        <pattern id="pattern0_161_3554" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref="#image0_161_3554" transform="scale(0.01)" />
         </pattern>
         <image
-          id="image0_53_138"
-          width="64"
-          height="64"
-          xlinkHref="data:image/png;base64,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"
+          id="image0_161_3554"
+          width="100"
+          height="100"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE6ElEQVR4nO2d748dUxzGnwr144WSlnipIVHxI/0LFBEhZrtV0aKyr7rRJkRFuQhyKCo2Vaq1vGjaN02a0mo1xVuEIiuUSipFlKpsq8lGFLXdXjmcibW5O+eZe2fOPffO80m+7+6c+Z7vMzPnOWfOvRcQQgghhBBCCCGEEELkoRdAbVwMAnir5BiccE6bg3BsAVBvc9gchASJE90hkSFBIkOCRIYEiQwJEhnPAhgaF4c8FnUMwDFPjHnaODThnDYHMQnGU8y9ROX2etqw5xAkRoLEhZEgcWEkSFwYCRIXRoLEhZEgcWEkSFwYCRIXRoLEhZEgcWEkSFwYCRIXRoLEhZEgcWEkSGcJcth9JivsZ/Q+JJAg9QJCL6gkSOdidIfExXMBBLHnEAQXAfg1gCC/AbhEimRzKoCPAoiRht3+M1WiTM7KgGKkYc8pGnAVgBNEAe0GuIMAfvDEwRztXStF/s85AA4QxTsJ4AkACRmPu2N87VrxpkuU/9hMPl525BAjjTfJtrdJkH/pJwt2AMD8JgS5GcB35DkWV12Ui0mLexzA3U2IkcZS1wZjhWehopwG4GPyyh1sQYw0XiHP9WlVrfBAjrlCTwGC9OSY41RuFj+H+P5GHcAIgDsLECONRQCOklb4OlSEc908oWiLm5DxGGmFfwIwAxVgO/nYeKOJYt8CYAOALwF87X6xob/B59gcdgGYgi5mKVmI75uwuAsA7G/Q1u8AHmhghb8lc1mCLuVS992/sizu9ow2fwYwt4EV/pPI5w8AV6DLOB3AZ+QVubbJseEXT7v3NzhmHZmTfQSegS5iNdnx3S0M1n952n5ykuPeJ3N7Hl3C9aSrOQrgjhYE8Y0JjQZ3G7cBOELkZ/twEzqc84jvnKedfbRFO7sqo/0PPcc+RF40wwAuQIcyJcdK6+stipG42NTgHcgedxf4jt1K5vp2p1rhe8gOfgNgHjHDHnBzjFcBLM9YTul3a1/rATycY9llnpu7MDlbF9hRXOb8P2Mpl2QUab57BzI6yXJ8raA7a7yYTN7WLl+JDrK4n5NX2hqPGF95jrdCrShYlJfI3O1Pd5yJDmAN2SHfQLuDbMde0X0Fi/Ieee4XETk3kG7FTuJu94wZo2RRml33yoqFxGbtuuurHaOi5Hy3RMF04hFPQQZyiJFuUkgKjhr5iuBwjFbY2sCdZPG2EMXYmFOQ4yUIYuM18vzvxGaFl5GJ7ycsbuKsbR5BRkoSxP648j4yh3sRCZfnsLh3kYVYnlOQoZIEyWuFZ7dbDLsC+gVZtNU5itDj3onk2Q6alBgvkHlYm35WOwV5mUz0gyYH1VGi7U8K2gThi3fJvtol/bZwI2lxj3gsblascI+6LDFuDSBGaoWHSVF622FxGZ8+VsDyRp+bZ/zo3nmMuDFjZaA7oxkrPOxWuoPBuqDNgQuWBAh2H7LdmBeEaZ7HSBr73K2bdFn0klbY1ujsEILMJZI55jYuJ10ai8kNG0GWVe4jElkVQdGSkiPrDWUadsJcOjVPEifcjLwKMeqpxYMhBOkjBzUF/tmXXDoXqthgL7aZCIR9uaQ7AN7ViWBcQ87Sqxon3VcugvJMBB2vRxp2l2RwTgHwtO4UTLwznmr3y6qrNaYgHTOCP6aymOlsXs39fVAVoub6bJ2nEEIIIYQQQgghhBCoEn8DHZ3Nqigt+GEAAAAASUVORK5CYII="
         />
       </defs>
     </svg>

@@ -57,7 +57,7 @@ export default function Companies(): React.JSX.Element {
                 sx={{
                   width: '100%',
                   padding: '14px 0px',
-                  backgroundColor: '#2626',
+                  backgroundColor: '#262626',
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',

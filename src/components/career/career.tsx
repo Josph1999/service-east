@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Box, Typography } from '@mui/material';
 import axios, { AxiosResponse } from 'axios';
@@ -9,7 +8,7 @@ import { motion } from 'framer-motion';
 
 import { useLanguage } from '@/contexts/language-context';
 
-import smalldots from '../../../public/assets/SmallDots.png';
+import DotsIcon from '../icons/dots-icon';
 import LinkIcon from '../icons/link-icon';
 import { ResponseInterface, Vacancy } from '../interfaces/response.interface';
 
@@ -49,10 +48,10 @@ export default function Career(): React.JSX.Element {
   return (
     <Box
       sx={{
-        backgroundImage: `url(/assets/Rectangle.png)`,
+        backgroundImage: `url(/assets/DotsBackground.png)`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-        backgroundPosition: 'right',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         paddingTop: '100px',
       }}
     >
@@ -64,10 +63,10 @@ export default function Career(): React.JSX.Element {
         variants={fadeIn}
         sx={{
           marginTop: '60px',
-          backgroundColor: '#0A4AEB',
           paddingRight: '256px',
           display: 'flex',
-          justifyContent: 'space-around',
+          justifyContent: 'center',
+          gap: '40px',
           '@media (max-width: 1200px)': {
             paddingRight: '128px',
           },
@@ -82,7 +81,7 @@ export default function Career(): React.JSX.Element {
           },
         }}
       >
-        <Image width={92} height={106} src={smalldots} alt="Small Dots Image" className="dotsImage" />
+        <DotsIcon />
 
         <Box>
           <Typography
@@ -92,7 +91,6 @@ export default function Career(): React.JSX.Element {
               fontSize: '32px',
               fontWeight: 700,
               fontFeatureSettings: "'case' on",
-              color: 'white',
               paddingTop: '64px',
               '@media (max-width: 900px)': {
                 padding: '0px',
@@ -110,7 +108,6 @@ export default function Career(): React.JSX.Element {
             variants={fadeInUp}
             sx={{
               fontFeatureSettings: "'case' on",
-              color: 'white',
               width: '600px',
               paddingTop: '34px',
               paddingBottom: '64px',

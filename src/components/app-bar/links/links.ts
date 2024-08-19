@@ -1,7 +1,7 @@
 export const headerLinks = [
   {
-    name_ka: 'ჩვენს შესახებ',
-    name_eng: 'About Us',
+    name_ka: 'მთავარი',
+    name_eng: 'Main',
     path: '/',
   },
   {

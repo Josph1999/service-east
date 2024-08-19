@@ -10,6 +10,7 @@ import { useLanguage } from '@/contexts/language-context';
 
 import GoogleMaps from '../google-maps/google-maps';
 import DirectionIcon from '../icons/direction';
+import DotsIcon from '../icons/dots-icon';
 import MailIcon from '../icons/mail';
 import PhoneIcon from '../icons/phone';
 
@@ -60,11 +61,21 @@ export default function Contact(): React.JSX.Element {
     visible: { opacity: 1 },
   };
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, duration: 5 },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, duration: 5 },
+  };
+
   return (
     <motion.div variants={fadeInVariants} initial="hidden" animate="visible" transition={{ duration: 0.6 }}>
       <Box
         sx={{
-          backgroundImage: `url(/assets/Rectangle.png)`, // replace with your SVG file path
+          backgroundImage: `url(/assets/DotsBackground.png)`, // replace with your SVG file path
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
           backgroundPosition: 'right',
@@ -79,15 +90,70 @@ export default function Contact(): React.JSX.Element {
             },
           }}
         >
-          <Typography sx={{ fontFeatureSettings: "'case' on" }} fontSize={32}>
-            {renderLanguage('კონტაქტი', 'Contact')}
-          </Typography>
-          <Typography sx={{ fontFeatureSettings: "'case' on" }}>
-            {renderLanguage(
-              'ინფორმაციის მისაღებად ან ნებისმიერ სხვა საკითხთან დაკავშირებით, დაგვიკავშირდით: ',
-              'For information or any other matter, contact us:'
-            )}
-          </Typography>
+          <Box
+            component={motion.div}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            sx={{
+              paddingRight: '256px',
+              display: 'flex',
+              marginBottom: '120px',
+              justifyContent: 'space-around',
+              '@media (max-width: 1200px)': {
+                paddingRight: '128px',
+              },
+              '@media (max-width: 900px)': {
+                flexDirection: 'column',
+                paddingRight: '0px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '24px',
+                marginTop: '0px',
+                paddingTop: '90px',
+              },
+            }}
+          >
+            <DotsIcon />
+
+            <Typography
+              component={motion.div}
+              variants={fadeInUp}
+              sx={{
+                fontSize: '32px',
+                fontWeight: 700,
+                fontFeatureSettings: "'case' on",
+                color: 'black',
+                padding: '64px 0px',
+                '@media (max-width: 900px)': {
+                  padding: '0px',
+                },
+              }}
+            >
+              {renderLanguage('კონტაქტი', 'Contact')}
+            </Typography>
+            <Typography
+              component={motion.div}
+              variants={fadeInUp}
+              sx={{
+                fontFeatureSettings: "'case' on",
+                color: 'black',
+                width: '600px',
+                padding: '64px 0px',
+                '@media (max-width: 900px)': {
+                  padding: '0px',
+                  paddingBottom: '24px',
+                  width: '100%',
+                },
+              }}
+            >
+              {renderLanguage(
+                'მოდით ვიმუშაოთ ერთად ვიპოვოთ სრულყოფილი გადაწყვეტა თქვენი სამრეწველო აღჭურვილობის გამოწვევებისთვის. დაგვიკავშირდით დღეს უფასო კონსულტაციისთვის და აღმოაჩინეთ, თუ როგორ შეუძლია Service East-ს თქვენი ოპერაციების ოპტიმიზაცია და გაზარდოს თქვენი საბოლოო ხაზი',
+                `Let's work together to find the perfect solution for your industrial equipment challenges. Contact us today for a free consultation and discover how Service East can optimize your operations and boost your bottom line`
+              )}
+            </Typography>
+          </Box>
           <Box
             marginTop={5}
             marginBottom={5}

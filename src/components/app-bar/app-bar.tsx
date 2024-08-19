@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useWindowWidth } from '@/helpers/window-width';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem } from '@mui/material';
@@ -16,7 +16,6 @@ import { Language, useLanguage } from '@/contexts/language-context';
 
 import ServiceEastLogo from '../icons/service-east-logo';
 import MobileNavBar from '../mobile-nav-bar/mobile-nav-bar';
-import { headerLinks } from './links/links';
 
 const bounceAnimation = {
   hidden: { scale: 1, opacity: 1 },
@@ -49,14 +48,12 @@ export default function ButtonAppBar(): React.JSX.Element {
 
   const router = useRouter();
 
-  const pathName = usePathname();
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          backgroundColor: 'rgba(252, 252, 252, 0.85)',
           padding: '0px 256px',
           color: '#232C65',
           zIndex: 1000,
@@ -78,83 +75,53 @@ export default function ButtonAppBar(): React.JSX.Element {
             alignItems: 'center',
           }}
         >
-          {windowWidth > 1200 ? (
-            <Box sx={{ display: 'flex', gap: '10px' }}>
-              <IconButton
-                onClick={() => {
-                  router.push('/');
-                }}
-              >
-                <ServiceEastLogo width={windowWidth > 1200 ? 216 : 35} />
-              </IconButton>
-            </Box>
-          ) : null}
-          <Box sx={{ display: 'flex', gap: '20px', width: '100%', justifyContent: 'space-between' }}>
-            {windowWidth > 1200 ? (
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-                {headerLinks.map((link) => (
-                  <Button
-                    key={link.path}
-                    sx={{
-                      color: 'white',
-                      borderRadius: '0px',
-                      borderBottom: pathName === link.path ? '2px solid #fff' : 'none',
-                      fontWeight: pathName === link.path ? 700 : 400,
-                    }}
-                    onClick={() => {
-                      router.push(link.path);
-                    }}
-                  >
-                    {renderLanguage(link.name_ka, link.name_eng)}
-                  </Button>
-                ))}
-              </Box>
-            ) : (
+          <Box sx={{ display: 'flex', gap: '20px', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: '40px' }}>
               <IconButton
                 onClick={() => {
                   setMobileNav(true);
                 }}
               >
-                <MenuIcon sx={{ color: 'white' }} />
+                <MenuIcon sx={{ color: 'black' }} />
               </IconButton>
-            )}
-            {windowWidth <= 1200 ? (
               <IconButton
                 onClick={() => {
                   router.push('/');
                 }}
               >
-                <ServiceEastLogo width={windowWidth > 1200 ? 28 : 200} />
+                <ServiceEastLogo width={200} />
               </IconButton>
-            ) : null}
-            {windowWidth <= 1200 ? (
-              <IconButton onClick={handleClick} sx={{ color: 'white', fontSize: '12px' }}>
-                {language === Language.KA ? 'KA' : 'ENG'}
+            </Box>
+
+            <Box
+              sx={{
+                display: 'flex',
+                gap: '10px',
+                height: '100%',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                '@media (max-width: 1200px)': {
+                  width: 'auto',
+                },
+              }}
+            >
+              <IconButton onClick={handleClick} sx={{ color: 'black', fontSize: '16px' }}>
+                {language === Language.KA ? 'ქართული' : 'English'}
               </IconButton>
-            ) : null}
-            {windowWidth > 1200 ? (
-              <Box
-                sx={{
-                  display: 'flex',
-                  gap: '10px',
-                  height: '100%',
-                  alignItems: 'center',
-                  justifyContent: 'flex-end',
-                  '@media (max-width: 1200px)': {
-                    width: 'auto',
-                  },
-                }}
-              >
+              {windowWidth > 1200 ? (
                 <motion.div variants={bounceAnimation as unknown as Variants} initial="hidden" animate="visible">
-                  <Button variant="contained" sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }} onClick={() => {router.push('/contact')}}>
+                  <Button
+                    variant="contained"
+                    sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}
+                    onClick={() => {
+                      router.push('/contact');
+                    }}
+                  >
                     {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
                   </Button>
                 </motion.div>
-                <IconButton onClick={handleClick} sx={{ color: 'white', fontSize: '12px' }}>
-                  {language === Language.KA ? 'KA' : 'ENG'}
-                </IconButton>
-              </Box>
-            ) : null}
+              ) : null}
+            </Box>
 
             <Menu
               id="basic-menu"
@@ -164,7 +131,7 @@ export default function ButtonAppBar(): React.JSX.Element {
               MenuListProps={{
                 'aria-labelledby': 'basic-button',
               }}
-              sx={{ color: 'white' }}
+              sx={{ color: 'black' }}
             >
               <MenuItem
                 onClick={() => {
@@ -173,7 +140,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                 }}
                 sx={{ fontSize: '14px' }}
               >
-                KA
+                ქართული
               </MenuItem>
               <MenuItem
                 onClick={() => {
@@ -182,7 +149,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                 }}
                 sx={{ fontSize: '14px' }}
               >
-                ENG
+                English
               </MenuItem>
             </Menu>
           </Box>

@@ -99,7 +99,22 @@ export default function Equipment(): React.JSX.Element {
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ textAlign: 'center' }}>
+      <Box
+        sx={{
+          textAlign: 'center',
+          width: '100%',
+          padding: '0px 256px',
+          '@media (max-width: 1500px)': {
+            padding: '0px 128px'
+          },
+          '@media (max-width: 1000px)': {
+            padding: '0px 64px'
+          },
+          '@media (max-width: 800px)': {
+            padding: '0px'
+          },
+        }}
+      >
         <Typography
           sx={{
             fontSize: { xs: '24px', md: '32px' },

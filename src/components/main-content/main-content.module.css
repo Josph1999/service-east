@@ -1,23 +1,38 @@
-.main {
-    background: linear-gradient(90deg, #000 0.34%, rgba(0, 0, 0, 0) 56.65%),
-      lightgray 50% / cover no-repeat;
-  }
-  
-  /* main.module.css */
-  
-  .videoContainer {
-    position: relative;
-  }
-  
+/* main.module.css */
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.videoBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Make the video background responsive */
+  height: 100%; /* Make the video background responsive */
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  border-radius: 0px;
+}
+
+/* Media query for tablets and larger screens */
+@media (min-width: 768px) {
   .videoBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover; /* Make sure the video covers the entire container */
-    z-index: 0; /* Set a lower z-index to position the video behind text */
+    width: 80%; /* Adjust width for larger screens */
+    height: 80%; /* Adjust height for larger screens */
+    border-radius: 16px;
   }
-  
-  /* Add any additional styles for your video here */
-  
+}
+
+/* Media query for larger desktops */
+@media (min-width: 1024px) {
+  .videoBackground {
+    width: 70%; /* Adjust width for larger desktops */
+    height: 70%; /* Adjust height for larger desktops */
+    border-radius: 16px;
+  }
+}

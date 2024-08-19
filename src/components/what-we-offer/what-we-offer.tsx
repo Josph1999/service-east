@@ -35,7 +35,7 @@ export default function WhatWeOffer(): React.JSX.Element {
           <Box
             sx={{
               padding: '32px 24px',
-              backgroundColor: '#F80',
+              backgroundColor: '#F1F7FE',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -47,7 +47,7 @@ export default function WhatWeOffer(): React.JSX.Element {
               },
             }}
           >
-            <ArrowIcon fill="white" />
+            <ArrowIcon fill="black" />
             <Typography
               sx={{
                 writingMode: 'vertical-rl',
@@ -68,7 +68,7 @@ export default function WhatWeOffer(): React.JSX.Element {
           <Box
             sx={{
               padding: { md: '64px', xs: '24px' },
-              backgroundColor: '#F80',
+              backgroundColor: '#F1F7FE',
               display: 'flex',
               flexDirection: 'column',
               gap: '30px',
@@ -98,7 +98,7 @@ export default function WhatWeOffer(): React.JSX.Element {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'space-between',
-              border: '5px solid #F80',
+              border: '5px solid #F1F7FE',
               width: { xs: '100%', md: 'auto' },
               '@media (max-width: 1000px)': {
                 padding: '40px 24px',

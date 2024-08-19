@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useLanguage } from '@/contexts/language-context';
 
 import { headerLinks } from '../app-bar/links/links';
+import CloseIcon from '../icons/close-icon';
 import ServiceEastLogo from '../icons/service-east-logo';
 
 interface MobileNavBarProps {
@@ -33,21 +34,32 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
     <Box
       role="presentation"
       sx={{
-        width: '250px',
-        backgroundColor: '#0A1AAB',
+        backgroundColor: 'white',
         color: '#fff',
+        padding: '20px',
       }}
     >
       <List>
         {' '}
-        <IconButton
-          onClick={() => {
-            router.push('/');
-          }}
-        >
-          <ServiceEastLogo width={200} />
-        </IconButton>
-        <Box sx={{ borderTop: '1px solid #232C65' }} />
+        <Box sx={{ display: 'flex', gap: '60px', justifyContent: 'center', alignItems: 'center' }}>
+          <IconButton
+            onClick={() => {
+              router.push('/');
+            }}
+          >
+            <ServiceEastLogo width={200} />
+          </IconButton>
+          <Box>
+            <Button
+              variant="outlined"
+              sx={{ color: 'black', borderRadius: '0px', borderColor: 'black', width: '180px' }}
+              endIcon={<CloseIcon />}
+              onClick={onClose}
+            >
+              {renderLanguage('დახურვა', 'Close')}
+            </Button>
+          </Box>
+        </Box>
         {headerLinks.map((item) => (
           <ListItem
             key={item.name_ka}
@@ -55,11 +67,11 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
             onClick={() => {
               router.push(item.path);
             }}
-            sx={{ padding: '0px 10px' }}
+            sx={{ padding: '0px 10px', marginTop: '30px' }}
           >
             <ListItemButton
               sx={{
-                borderBottom: pathName === item.path ? '2px solid #232C65' : 'none',
+                borderLeft: pathName === item.path ? '1px solid #232C65' : 'none',
                 fontFeatureSettings: "'case' on",
                 textTransform: 'uppercase',
               }}
@@ -70,6 +82,7 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
                     fontWeight: pathName === item.path ? 700 : 400,
                     fontFeatureSettings: "'case' on",
                     textTransform: 'uppercase',
+                    color: 'black',
                   },
                 }}
                 primary={renderLanguage(item.name_ka, item.name_eng)}
@@ -78,15 +91,6 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
             </ListItemButton>
           </ListItem>
         ))}
-        <Button
-          variant="contained"
-          sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}
-          onClick={() => {
-            router.push('/contact');
-          }}
-        >
-          {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
-        </Button>
       </List>
     </Box>
   );

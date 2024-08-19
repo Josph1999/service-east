@@ -9,7 +9,7 @@ import { useLanguage } from '@/contexts/language-context';
 
 import bottlesSrc from '../../../public/assets/Bottles.jpeg';
 import factorySrc from '../../../public/assets/FactoryPhoto.jpg';
-import smalldots from '../../../public/assets/SmallDots.png';
+import DotsIcon from '../icons/dots-icon';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -27,77 +27,12 @@ export default function Services(): React.JSX.Element {
   return (
     <Box>
       <Box
-        component={motion.div}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
         sx={{
-          marginTop: '60px',
-          backgroundColor: '#1E1E26',
-          paddingRight: '256px',
-          display: 'flex',
-          justifyContent: 'space-around',
-          '@media (max-width: 1200px)': {
-            paddingRight: '128px',
-          },
-          '@media (max-width: 900px)': {
-            flexDirection: 'column',
-            paddingRight: '0px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '24px',
-            marginTop: '0px',
-            paddingTop: '90px'
-          },
-        }}
-      >
-        <Image width={92} height={106} src={smalldots} alt="Small Dots Image" className="dotsImage" />
-
-        <Typography
-          component={motion.div}
-          variants={fadeInUp}
-          sx={{
-            fontSize: '32px',
-            fontWeight: 700,
-            fontFeatureSettings: "'case' on",
-            color: 'white',
-            padding: '64px 0px',
-            '@media (max-width: 900px)': {
-              padding: '0px',
-            },
-          }}
-        >
-          {renderLanguage('რას გთავაზობთ', 'What We Offer')}
-        </Typography>
-        <Typography
-          component={motion.div}
-          variants={fadeInUp}
-          sx={{
-            fontFeatureSettings: "'case' on",
-            color: 'white',
-            width: '600px',
-            padding: '64px 0px',
-            '@media (max-width: 900px)': {
-              padding: '0px',
-              paddingBottom: '24px',
-              width: '100%',
-            },
-          }}
-        >
-          {renderLanguage(
-            'სამრეწველო აღჭურვილობის გადაწყვეტილებები. გლობალური ექსპერტიზა. შეუდარებელი სერვისი',
-            'Industrial Equipment Solutions. Global Expertise. Unrivaled Service'
-          )}
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          backgroundImage: `url(/assets/Rectangle.png)`,
+          backgroundImage: `url(/assets/DotsBackground.png)`,
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundPosition: 'right',
-          paddingTop: '120px',
+          paddingTop: '100px'
         }}
       >
         <Box
@@ -105,11 +40,75 @@ export default function Services(): React.JSX.Element {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          variants={fadeIn}
+          sx={{
+            paddingRight: '256px',
+            display: 'flex',
+            marginBottom: '120px',
+            justifyContent: 'space-around',
+            '@media (max-width: 1200px)': {
+              paddingRight: '128px',
+            },
+            '@media (max-width: 900px)': {
+              flexDirection: 'column',
+              paddingRight: '0px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '24px',
+              marginTop: '0px',
+              paddingTop: '90px',
+            },
+          }}
+        >
+          <DotsIcon />
+
+          <Typography
+            component={motion.div}
+            variants={fadeInUp}
+            sx={{
+              fontSize: '32px',
+              fontWeight: 700,
+              fontFeatureSettings: "'case' on",
+              color: 'black',
+              padding: '64px 0px',
+              '@media (max-width: 900px)': {
+                padding: '0px',
+              },
+            }}
+          >
+            {renderLanguage('რას გთავაზობთ', 'What We Offer')}
+          </Typography>
+          <Typography
+            component={motion.div}
+            variants={fadeInUp}
+            sx={{
+              fontFeatureSettings: "'case' on",
+              color: 'black',
+              width: '600px',
+              padding: '64px 0px',
+              '@media (max-width: 900px)': {
+                padding: '0px',
+                paddingBottom: '24px',
+                width: '100%',
+              },
+            }}
+          >
+            {renderLanguage(
+              'სამრეწველო აღჭურვილობის გადაწყვეტილებები. გლობალური ექსპერტიზა. შეუდარებელი სერვისი',
+              'Industrial Equipment Solutions. Global Expertise. Unrivaled Service'
+            )}
+          </Typography>
+        </Box>
+        <Box
+          component={motion.div}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={fadeInUp}
           sx={{
-            backgroundColor: '#0A4AEB',
-            width: '70%',
-            padding: '64px',
+            backgroundColor: '#F1F7FE',
+            width: '80%',
+            padding: '64px 256px',
             display: 'flex',
             flexDirection: 'column',
             gap: '24px',
@@ -117,13 +116,13 @@ export default function Services(): React.JSX.Element {
             alignItems: 'center',
             '@media (max-width: 900px)': {
               width: '100%',
-              padding: '24px'
+              padding: '24px',
             },
           }}
         >
           <Box
             sx={{
-              width: '544px',
+              width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: '24px',
@@ -138,7 +137,7 @@ export default function Services(): React.JSX.Element {
               component={motion.div}
               variants={fadeInUp}
               sx={{
-                color: 'white',
+                color: 'black',
                 fontSize: '32px',
                 fontWeight: 700,
                 fontFeatureSettings: "'case' on",
@@ -152,7 +151,7 @@ export default function Services(): React.JSX.Element {
                 `Our engineers and mechanics help customers with set up, service works and repairing the following technological equipment`
               )}
             </Typography>
-            <Typography component={motion.div} variants={fadeInUp} sx={{ color: 'white' }}>
+            <Typography component={motion.div} variants={fadeInUp} sx={{ color: 'black' }}>
               {renderLanguage(
                 `ჩვენი გამოცდილი ინჟინრებისა და მექანიკოსების გუნდი უზრუნველყოფს ყოვლისმომცველ მხარდაჭერას ტექნოლოგიური აღჭურვილობის ფართო სპექტრისთვის, რომელიც აუცილებელია თქვენი საწარმოო ხაზებისთვის. ჩვენ სპეციალიზირებულნი ვართ შემდეგი სისტემების უწყვეტი დაყენების, მუდმივი მოვლისა და ეფექტური შეკეთების საქმეში`,
                 `Our team of experienced engineers and mechanics provide comprehensive support for a wide range of technological equipment essential to your production lines. We specialize in the seamless setup, ongoing maintenance, and efficient repair of the following systems:`
@@ -188,9 +187,9 @@ export default function Services(): React.JSX.Element {
           viewport={{ once: true }}
           variants={fadeInUp}
           sx={{
-            backgroundColor: '#F80',
-            width: '70%',
-            padding: '64px',
+            backgroundColor: '#F1F7FE',
+            width: '80%',
+            padding: '64px 256px',
             display: 'flex',
             flexDirection: 'column',
             gap: '24px',
@@ -198,13 +197,13 @@ export default function Services(): React.JSX.Element {
             alignItems: 'center',
             '@media (max-width: 900px)': {
               width: '100%',
-              padding: '24px'
+              padding: '24px',
             },
           }}
         >
           <Box
             sx={{
-              width: '544px',
+              width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: '24px',
