@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { useWindowWidth } from '@/helpers/window-width';
 import { Button, Divider, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -26,6 +27,8 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
 
   const { renderLanguage } = useLanguage();
 
+  const windowWidth = useWindowWidth();
+
   const router = useRouter();
 
   const pathName = usePathname();
@@ -47,12 +50,20 @@ export default function MobileNavBar(props: MobileNavBarProps): React.JSX.Elemen
               router.push('/');
             }}
           >
-            <ServiceEastLogo width={200} />
+            <ServiceEastLogo width={windowWidth > 1000 ? 200 : 130} height={windowWidth > 1000 ? 40 : 30} />
           </IconButton>
           <Box>
             <Button
               variant="outlined"
-              sx={{ color: 'black', borderRadius: '0px', borderColor: 'black', width: '180px' }}
+              sx={{
+                color: 'black',
+                borderRadius: '0px',
+                borderColor: 'black',
+                width: '180px',
+                '@media (max-width: 1000px)': {
+                  width: '100px'
+                },
+              }}
               endIcon={<CloseIcon />}
               onClick={onClose}
             >

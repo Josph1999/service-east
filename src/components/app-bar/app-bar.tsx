@@ -89,7 +89,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                   router.push('/');
                 }}
               >
-                <ServiceEastLogo width={200} />
+                <ServiceEastLogo width={windowWidth > 1000 ? 200 : 130} height={windowWidth > 1000 ? 40 : 30} />
               </IconButton>
             </Box>
 
