@@ -77,13 +77,13 @@ export default function WhatWeOffer(): React.JSX.Element {
           >
             <Typography sx={{ fontSize: { xs: '20px', md: '32px' }, fontWeight: 700 }}>
               {renderLanguage(
-                'ჩვენი ინჟინრები და მექანიკოსები ეხმარებიან მომხმარებლებს შემდეგი ტექნოლოგიური აღჭურვილობის დაყენებაში, სერვისის სამუშაოებში და შეკეთებაში',
+                'გამოცდილი ინჟინერებისა და მექანიკოსებისგან შემდგარი გუნდი მზად არის გაგიწიოთ მომსახურება საწარმოო ხაზების სერვისების ფართო სპექტრში. ',
                 'Our engineers and mechanics help customers with set up, service works and repairing the following technological equipment'
               )}
             </Typography>
             <Typography>
               {renderLanguage(
-                'ჩვენი გამოცდილი ინჟინრებისა და მექანიკოსების გუნდი უზრუნველყოფს ყოვლისმომცველ მხარდაჭერას ტექნოლოგიური აღჭურვილობის ფართო სპექტრისთვის, რომელიც აუცილებელია თქვენი საწარმოო ხაზებისთვის. ჩვენ სპეციალიზებულნი ვართ შემდეგი სისტემების უწყვეტი დაყენების, მუდმივი მოვლისა და ეფექტური შეკეთების საქმეში',
+                'ქვეტექსტი: მრავალწლიანი გამოცდილებისა და გლობალური პარტნიორობების შედეგად, სერვის ისტ საქართველოს გუნდს გააჩნია ხარისხისა და ეფექტურობის გარანტია, რომელიც თავის მხრივ ჩვენს მომხმარებლებსა და პარტნიორებს უქმნის საწარმოო ბიზნესის წარმართვეს სტაბილურ და გამართულ შესაძლებლობებს. ',
                 'Our team of experienced engineers and mechanics provide comprehensive support for a wide range of technological equipment essential to your production lines. We specialize in the seamless setup, ongoing maintenance, and efficient repair of the following systems:'
               )}
             </Typography>
@@ -135,7 +135,7 @@ export default function WhatWeOffer(): React.JSX.Element {
         >
           <Typography sx={{ fontSize: { xs: '18px', md: '26px' }, fontWeight: 700 }}>
             {renderLanguage(
-              'Service East არის თქვენი სანდო გლობალური პარტნიორი უმაღლესი ხარისხის სამრეწველო აღჭურვილობის მომსახურებისა და ტექნიკური მომსახურებისთვის. ჩვენი ერთგულება სრულყოფილებისადმი უზრუნველყოფს თქვენი ოპერაციების შეუფერხებლად წარმართვას, მიუხედავად იმისა, თუ სად ხართ მსოფლიოში',
+              'სერვის ისტ საქართველო არის თქვენი სანდო პარტნიორი საწარმოო ხაზებისა და მაღალი წარმადობის დანადგარების ტექნიკური და კომპონენტური სერვისების მომსახურების სფეროში. ჩვენი სწრაფვა ხარისხის სანდოობის სრულყოფისკენ ქმნის გარანტიას თქვენი ბიზნესის საიმედო და სტაბილუ წარმართვისთვის. ',
               'Service East is your trusted global partner for top-quality industrial equipment service and maintenance. Our commitment to excellence ensures your operations run smoothly, no matter where you are in the world'
             )}
           </Typography>

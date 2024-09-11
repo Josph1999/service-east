@@ -117,7 +117,7 @@ export default function ButtonAppBar(): React.JSX.Element {
                       router.push('/contact');
                     }}
                   >
-                    {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
+                    {renderLanguage('დაგვიკავშირდი', 'Request For Service')}
                   </Button>
                 </motion.div>
               ) : null}

@@ -149,7 +149,7 @@ export default function Contact(): React.JSX.Element {
               }}
             >
               {renderLanguage(
-                'მოდით ვიმუშაოთ ერთად ვიპოვოთ სრულყოფილი გადაწყვეტა თქვენი სამრეწველო აღჭურვილობის გამოწვევებისთვის. დაგვიკავშირდით დღეს უფასო კონსულტაციისთვის და აღმოაჩინეთ, თუ როგორ შეუძლია Service East-ს თქვენი ოპერაციების ოპტიმიზაცია და გაზარდოს თქვენი საბოლოო ხაზი',
+                'გახდი ჩვენი პარტნიორი - ერთად შევცვალოთ ხარისხი სტანდარტი ინდუსტრიაში!',
                 `Let's work together to find the perfect solution for your industrial equipment challenges. Contact us today for a free consultation and discover how Service East can optimize your operations and boost your bottom line`
               )}
             </Typography>

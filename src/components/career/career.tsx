@@ -88,7 +88,7 @@ export default function Career(): React.JSX.Element {
             component={motion.div}
             variants={fadeInUp}
             sx={{
-              fontSize: '32px',
+              fontSize: '24px',
               fontWeight: 700,
               fontFeatureSettings: "'case' on",
               paddingTop: '64px',
@@ -99,7 +99,7 @@ export default function Career(): React.JSX.Element {
             }}
           >
             {renderLanguage(
-              'თქვენი კარიერა სამრეწველო აღჭურვილობაში იწყება აქ',
+              'ჩვენი კომპანიის სწრაფვა სრულყოფისკენ ეფუძნება გამოცდილი სპეციალისტებისა და ტალანტების ძიების უწყვეტ პროცესს, რომელიც თავისმხრივ ორიენტირებულია თანაბარმნიშვნელოვანი, კოლეგიალური, დაფასებული და ზრდაზე მიმართული სამუშაო გარემოს შექმნისკენ. ',
               'Your Career in Industrial Equipment Starts Here'
             )}
           </Typography>
@@ -120,7 +120,7 @@ export default function Career(): React.JSX.Element {
             }}
           >
             {renderLanguage(
-              'სამრეწველო აღჭურვილობის გადაწყვეტილებები. გლობალური ექსპერტიზა. შეუდარებელი სერვისი',
+              'თუ თვლი რომ მზად ხარ გახდე ჩვენი გუნდის წევრი, გაეცანი გამოქვეყნებულ აქტიურ ვაკანსიებს ან დაგვიკავშირდი ჩვენს საკონტაქტო რეკვიზიტებზე',
               'Industrial Equipment Solutions. Global Expertise. Unrivaled Service'
             )}
           </Typography>

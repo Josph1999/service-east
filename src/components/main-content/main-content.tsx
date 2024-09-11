@@ -83,11 +83,11 @@ export default function MainContent(): React.JSX.Element {
                 position: 'relative',
               }}
             >
-              {renderLanguage('სამრეწველო აღჭურვილობის მიმწოდებელი', 'Provider of Industrial Equipment Solutions')}
+              {renderLanguage('რეგიონალური ბაზრის ლიდერი, სამრეწველო აღჭურვილობის სერვისების სფეროში', 'Provider of Industrial Equipment Solutions')}
             </Typography>
             <Typography sx={{ mt: '16px', color: 'white', position: 'relative' }}>
               {renderLanguage(
-                'გლობალური კომპანია კვების, სასმელების და ქიმიური მრეწველობის გამოცდილებით.',
+                'მრავალწლიანი გამოცდილება  კვების, სასმელებისა და ქიმიური მრეწველობის დანადგარების სერვისში.',
                 'A global company with experience in food, beverage and chemical industries.'
               )}
             </Typography>
@@ -110,7 +110,7 @@ export default function MainContent(): React.JSX.Element {
                   router.push('/contact');
                 }}
               >
-                {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
+                {renderLanguage('დაგვიკავშირდი', 'Request For Service')}
               </Button>
               <Button variant="outlined" sx={{ borderRadius: '0px', color: 'white', borderColor: 'white' }}>
                 {renderLanguage('მეტის ნახვა', 'Learn More')}

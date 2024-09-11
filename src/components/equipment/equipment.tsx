@@ -44,13 +44,13 @@ export default function Equipment(): React.JSX.Element {
   const data = [
     {
       id: 1,
-      title_ka: 'წყალი',
+      title_ka: 'მინერალური წყლები ',
       title_eng: 'Water',
       icon: <WaterIcon />,
     },
     {
       id: 2,
-      title_ka: 'ლუდი',
+      title_ka: 'ალკოჰოლური სასმელები ',
       title_eng: 'Beer',
       icon: <BeerIcon />,
     },
@@ -68,7 +68,7 @@ export default function Equipment(): React.JSX.Element {
     },
     {
       id: 5,
-      title_ka: 'რძე',
+      title_ka: 'რძის ნაწარმი',
       title_eng: 'Milk',
       icon: <MilkIcon />,
     },
@@ -123,7 +123,7 @@ export default function Equipment(): React.JSX.Element {
             marginBottom: '25px',
           }}
         >
-          {renderLanguage('მორგებული აღჭურვილობა თქვენი ინდუსტრიისთვის', 'Tailored Equipment for Your Industry')}
+          {renderLanguage('ჩვენი გუნდი მზად არის გაგიწიოთ მომსახურება შემდეგ ინდუსტრიებში:', 'Tailored Equipment for Your Industry')}
         </Typography>
         <Grid container spacing={2}>
           {data.map((item) => (

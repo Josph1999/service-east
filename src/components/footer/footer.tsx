@@ -40,7 +40,7 @@ export default function Footer(): React.JSX.Element {
         <ServiceEastLogo />
         <Typography sx={{ color: 'white' }}>
           {renderLanguage(
-            'სამრეწველო აღჭურვილობის გადაწყვეტილებების მიმწოდებელი',
+            'სამრეწველო და საწარმოო დანადგარების სერვისების ლიდერი',
             'Provider of Industrial Equipment Solutions'
           )}
         </Typography>
@@ -54,7 +54,7 @@ export default function Footer(): React.JSX.Element {
           }}
           onClick={() => {router.push('/contact')}}
         >
-          {renderLanguage('სერვისის მოთხოვნა', 'Request For Service')}
+          {renderLanguage('დაგვიკავშირდი', 'Request For Service')}
         </Button>
       </Box>
       <Box
@@ -94,15 +94,15 @@ export default function Footer(): React.JSX.Element {
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <PhoneIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('ტელ:', 'Tel:')} </Typography>
-          <Typography sx={{ color: 'white' }}>866-330-4255</Typography>
+          <Typography sx={{ color: 'white' }}>+995 511 33 33 86</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <MailIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მეილი:', 'Mail:')} </Typography>
-          <Typography sx={{ color: 'white' }}>info@capelevator.com</Typography>
+          <Typography sx={{ color: 'white' }}>info@service-east.com </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <LocationIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მისამართი:', 'Address:')} </Typography>
-          <Typography sx={{ color: 'white' }}>111 Canfield Ave, Suite B11 Randolph, NJ 07869</Typography>
+          <Typography sx={{ color: 'white' }}>გურამ ფანჯიკიძის 22, ბლოკი ა, ოფისი 7, 0160, თბილისი, საქართველო</Typography>
         </Box>
       </Box>
     </Box>
