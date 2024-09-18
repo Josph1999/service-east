@@ -9,6 +9,7 @@ interface CardProps {
   description_ka: string;
   description_eng: string;
   image: string;
+  isTeam?: boolean;
 }
 
 export default function Card(props: CardProps): React.JSX.Element {
@@ -18,6 +19,7 @@ export default function Card(props: CardProps): React.JSX.Element {
     title_ka: titleKa,
     description_eng: descriptionEng,
     description_ka: descriptionKa,
+    isTeam = false,
   } = props;
 
   const { renderLanguage } = useLanguage();
@@ -30,7 +32,7 @@ export default function Card(props: CardProps): React.JSX.Element {
         backgroundImage: `url(${image})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'left',
-        backgroundSize: 'cover',
+        backgroundSize: isTeam ? 'contain' : 'cover',
         cursor: 'pointer',
         filter: 'grayscale(100%)',
         transition: 'filter 0.3s ease-in-out',

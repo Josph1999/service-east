@@ -150,7 +150,7 @@ export default function Contact(): React.JSX.Element {
             >
               {renderLanguage(
                 'გახდი ჩვენი პარტნიორი - ერთად შევცვალოთ ხარისხი სტანდარტი ინდუსტრიაში!',
-                `Let's work together to find the perfect solution for your industrial equipment challenges. Contact us today for a free consultation and discover how Service East can optimize your operations and boost your bottom line`
+                `Service East Georgia’s team is open for new horizons of partnerships. If you share our vision and objectives, reach out to discuss joint ventures and opportunities!`
               )}
             </Typography>
           </Box>

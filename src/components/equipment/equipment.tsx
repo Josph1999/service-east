@@ -45,19 +45,19 @@ export default function Equipment(): React.JSX.Element {
     {
       id: 1,
       title_ka: 'მინერალური წყლები ',
-      title_eng: 'Water',
+      title_eng: 'Mineral Water ',
       icon: <WaterIcon />,
     },
     {
       id: 2,
       title_ka: 'ალკოჰოლური სასმელები ',
-      title_eng: 'Beer',
+      title_eng: 'Alcohol Beverages',
       icon: <BeerIcon />,
     },
     {
       id: 3,
       title_ka: 'ზეთი',
-      title_eng: 'Oil',
+      title_eng: 'Oil and Food Liquids ',
       icon: <OilIcon />,
     },
     {
@@ -69,13 +69,13 @@ export default function Equipment(): React.JSX.Element {
     {
       id: 5,
       title_ka: 'რძის ნაწარმი',
-      title_eng: 'Milk',
+      title_eng: 'Diary Products ',
       icon: <MilkIcon />,
     },
     {
       id: 6,
       title_ka: 'ქიმიკატები',
-      title_eng: 'Chemical',
+      title_eng: 'Chemicals',
       icon: <ChemicalIcon />,
     },
   ];
@@ -123,7 +123,7 @@ export default function Equipment(): React.JSX.Element {
             marginBottom: '25px',
           }}
         >
-          {renderLanguage('ჩვენი გუნდი მზად არის გაგიწიოთ მომსახურება შემდეგ ინდუსტრიებში:', 'Tailored Equipment for Your Industry')}
+          {renderLanguage('ჩვენი გუნდი მზად არის გაგიწიოთ მომსახურება შემდეგ ინდუსტრიებში:', 'Our Team of Experts is Ready to Provide Services in the Following Areas:')}
         </Typography>
         <Grid container spacing={2}>
           {data.map((item) => (

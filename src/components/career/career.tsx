@@ -100,7 +100,7 @@ export default function Career(): React.JSX.Element {
           >
             {renderLanguage(
               'ჩვენი კომპანიის სწრაფვა სრულყოფისკენ ეფუძნება გამოცდილი სპეციალისტებისა და ტალანტების ძიების უწყვეტ პროცესს, რომელიც თავისმხრივ ორიენტირებულია თანაბარმნიშვნელოვანი, კოლეგიალური, დაფასებული და ზრდაზე მიმართული სამუშაო გარემოს შექმნისკენ. ',
-              'Your Career in Industrial Equipment Starts Here'
+              'At the core of our company’s mission is continuous growth, progress, and regional expansion. Every individual within our team drives our success, and we prioritize the well-being and professional development of our colleagues. We are always seeking to attract young talent, mid-level professionals, and seasoned industry veterans to strengthen and diversify our team.'
             )}
           </Typography>
           <Typography
@@ -121,7 +121,7 @@ export default function Career(): React.JSX.Element {
           >
             {renderLanguage(
               'თუ თვლი რომ მზად ხარ გახდე ჩვენი გუნდის წევრი, გაეცანი გამოქვეყნებულ აქტიურ ვაკანსიებს ან დაგვიკავშირდი ჩვენს საკონტაქტო რეკვიზიტებზე',
-              'Industrial Equipment Solutions. Global Expertise. Unrivaled Service'
+              'If you share our vision and goals, and are ready to be part of a dynamic and ambitious organization, we encourage you to reach out to us today!'
             )}
           </Typography>
         </Box>

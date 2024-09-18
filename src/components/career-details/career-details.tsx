@@ -118,7 +118,7 @@ export default function CareerDetails(): React.JSX.Element {
                 router.push('/career');
               }}
             >
-              {renderLanguage('კარიერა', 'Back To Career')}
+              {renderLanguage('ვაკანსიები', 'Back To Vacancies')}
             </Button>
             <Typography
               component={motion.div}

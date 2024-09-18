@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/language-context';
 
 import bottlesSrc from '../../../public/assets/Bottles.jpeg';
-import factorySrc from '../../../public/assets/FactoryPhoto.jpg';
+// import factorySrc from '../../../public/assets/FactoryPhoto.jpg';
 import DotsIcon from '../icons/dots-icon';
 
 const fadeInUp = {
@@ -95,7 +95,7 @@ export default function Services(): React.JSX.Element {
           >
             {renderLanguage(
               'სერვის ისტ საქართველო არის თქვენი სანდო პარტნიორი საწარმოო ხაზებისა და მაღალი წარმადობის დანადგარების ტექნიკური და კომპონენტური სერვისების მომსახურების სფეროში. ჩვენი სწრაფვა ხარისხის სანდოობის სრულყოფისკენ ქმნის გარანტიას თქვენი ბიზნესის საიმედო და სტაბილუ წარმართვისთვის. ',
-              'Industrial Equipment Solutions. Global Expertise. Unrivaled Service'
+              'Expert Team Delivering Comprehensive Production Line Support Services'
             )}
           </Typography>
         </Box>
@@ -148,7 +148,7 @@ export default function Services(): React.JSX.Element {
             >
               {renderLanguage(
                 `გამოცდილი ინჟინერებისა და მექანიკოსებისგან შემდგარი გუნდი მზად არის გაგიწიოთ მომსახურება საწარმოო ხაზების სერვისების ფართო სპექტრში. `,
-                `Our engineers and mechanics help customers with set up, service works and repairing the following technological equipment`
+                `A team of experienced engineers and mechanics are ready to serve you in a wide range of production line services.`
               )}
             </Typography>
             <Typography component={motion.div} variants={fadeInUp} sx={{ color: 'black' }}>
@@ -157,7 +157,9 @@ export default function Services(): React.JSX.Element {
 ჩვენი გუნდი მზად არის გაგიწიოთ მომსახურება მაღალი წარმადობის დანადგარების ინსტალირების, დე-ინსტალირების, შეკეთების, მოდიფიკაციის, ოპტიმიზაციის, განახლების, პროგრამული უზრუნველყოფის, გაშვებისა და ინსპექციის მიმართულებით. 
 მზად ვართ მოვემსახუროთ მომხმარებლებს შემდეგ საწარმოო სპექტრში: მინერალური წყლები / ალკოჰოლური სასმელები / ზეთი / ღვინო / რძის ნაწარმი / ქიმიკატები / სხვა
 `,
-                `Our team of experienced engineers and mechanics provide comprehensive support for a wide range of technological equipment essential to your production lines. We specialize in the seamless setup, ongoing maintenance, and efficient repair of the following systems:`
+                `Our team of skilled professionals, including technicians, mechanics, electricians, and software engineers, is equipped to deliver exceptional services across a broad range of production line repairs. With years of hands-on experience and global partnerships with industry leaders, we’ve built a service model centered on innovation, cutting-edge technology, and a strong foundation of expertise.
+Our services range from assembly and installation to software optimization, process technology, and production line commissioning. We are committed to providing efficient solutions for industries spanning water and liquids, chemicals, dairy, and more.
+`
               )}
             </Typography>
             <Image
@@ -170,7 +172,7 @@ export default function Services(): React.JSX.Element {
           </Box>
         </Box>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           backgroundImage: `url(/assets/DotsBackground.png)`,
           backgroundRepeat: 'no-repeat',
@@ -253,7 +255,7 @@ export default function Services(): React.JSX.Element {
             />
           </Box>
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

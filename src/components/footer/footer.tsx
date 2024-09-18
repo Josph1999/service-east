@@ -41,7 +41,7 @@ export default function Footer(): React.JSX.Element {
         <Typography sx={{ color: 'white' }}>
           {renderLanguage(
             'სამრეწველო და საწარმოო დანადგარების სერვისების ლიდერი',
-            'Provider of Industrial Equipment Solutions'
+            'Service East Georgia LLC – Leader Service Provider in Service Industry!'
           )}
         </Typography>
         <Button
@@ -54,7 +54,7 @@ export default function Footer(): React.JSX.Element {
           }}
           onClick={() => {router.push('/contact')}}
         >
-          {renderLanguage('დაგვიკავშირდი', 'Request For Service')}
+          {renderLanguage('დაგვიკავშირდი', 'Submit Request')}
         </Button>
       </Box>
       <Box
@@ -90,19 +90,19 @@ export default function Footer(): React.JSX.Element {
           fontWeight={700}
           sx={{ color: 'white', fontSize: { xs: '16px', md: '20px' } }}
         >
-          Contact info
+          {renderLanguage('საკონტაქტო ინფორმაცია:', 'Contact Information:')}
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <PhoneIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('ტელ:', 'Tel:')} </Typography>
           <Typography sx={{ color: 'white' }}>+995 511 33 33 86</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <MailIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მეილი:', 'Mail:')} </Typography>
+          <MailIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მეილი:', 'E-Mail:')} </Typography>
           <Typography sx={{ color: 'white' }}>info@service-east.com </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <LocationIcon /> <Typography sx={{ color: 'white' }}>{renderLanguage('მისამართი:', 'Address:')} </Typography>
-          <Typography sx={{ color: 'white' }}>გურამ ფანჯიკიძის 22, ბლოკი ა, ოფისი 7, 0160, თბილისი, საქართველო</Typography>
+          <Typography sx={{ color: 'white' }}>{renderLanguage('გურამ ფანჯიკიძის 22, ბლოკი ა, ოფისი 7, 0160, თბილისი, საქართველო', 'Guram Panjikidze Street 22, Block A, Office 7, 0160, Tbilisi, Georgia')}</Typography>
         </Box>
       </Box>
     </Box>

@@ -42,7 +42,7 @@ export default function Companies(): React.JSX.Element {
           textAlign: 'center',
         }}
       >
-        {renderLanguage('გახდი ჩვენი პარტნიორი - ერთად შევცვალოთ ხარისხი სტანდარტი ინდუსტრიაში!', 'Working Together to Deliver Solutions')}
+        {renderLanguage('გახდი ჩვენი პარტნიორი - ერთად შევცვალოთ ხარისხი სტანდარტი ინდუსტრიაში!', 'Become our Partner, Join the Mission of Becoming a Regional Leader!')}
       </Typography>
       <Grid container spacing={2} sx={{ marginTop: '25px' }} ref={ref}>
         {items.map((src, index) => (

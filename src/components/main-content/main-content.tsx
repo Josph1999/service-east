@@ -50,7 +50,7 @@ export default function MainContent(): React.JSX.Element {
       }}
     >
       <video ref={videoRef} autoPlay muted loop className={styles.videoBackground}>
-        <source src="https://service-east.com/wp-content/uploads/2022/11/about.mp4" type="video/mp4" />
+        <source src="https://firebasestorage.googleapis.com/v0/b/georaffal.appspot.com/o/Service%20East%20Video.mp4?alt=media&token=06c8e6a0-786f-41c9-bd2f-406b1a327893" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <Box
@@ -88,7 +88,7 @@ export default function MainContent(): React.JSX.Element {
             <Typography sx={{ mt: '16px', color: 'white', position: 'relative' }}>
               {renderLanguage(
                 'მრავალწლიანი გამოცდილება  კვების, სასმელებისა და ქიმიური მრეწველობის დანადგარების სერვისში.',
-                'A global company with experience in food, beverage and chemical industries.'
+                'A trusted global partner with extensive expertise in the food, beverage, and chemical industries'
               )}
             </Typography>
             <Box
@@ -110,10 +110,10 @@ export default function MainContent(): React.JSX.Element {
                   router.push('/contact');
                 }}
               >
-                {renderLanguage('დაგვიკავშირდი', 'Request For Service')}
+                {renderLanguage('დაგვიკავშირდი', 'Submit Request')}
               </Button>
               <Button variant="outlined" sx={{ borderRadius: '0px', color: 'white', borderColor: 'white' }}>
-                {renderLanguage('მეტის ნახვა', 'Learn More')}
+                {renderLanguage('მეტის ნახვა', 'More Information')}
               </Button>
             </Box>
           </Box>
