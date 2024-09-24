@@ -10,26 +10,11 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import { motion, type Variants } from 'framer-motion';
 
 import { Language, useLanguage } from '@/contexts/language-context';
 
 import ServiceEastLogo from '../icons/service-east-logo';
 import MobileNavBar from '../mobile-nav-bar/mobile-nav-bar';
-
-const bounceAnimation = {
-  hidden: { scale: 1, opacity: 1 },
-  visible: {
-    scale: [1, 1.1, 1],
-    opacity: [1, 0.9, 1],
-    transition: {
-      duration: 1.5,
-      repeat: Infinity,
-      repeatType: 'reverse',
-      ease: 'easeInOut',
-    },
-  },
-};
 
 export default function ButtonAppBar(): React.JSX.Element {
   const { renderLanguage, language, changeLanguage } = useLanguage();
@@ -75,7 +60,9 @@ export default function ButtonAppBar(): React.JSX.Element {
             alignItems: 'center',
           }}
         >
-          <Box sx={{ display: 'flex', gap: '20px', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Box
+            sx={{ display: 'flex', gap: '20px', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}
+          >
             <Box sx={{ display: 'flex', gap: '40px' }}>
               <IconButton
                 onClick={() => {
@@ -109,17 +96,15 @@ export default function ButtonAppBar(): React.JSX.Element {
                 {language === Language.KA ? 'ქართული' : 'English'}
               </IconButton>
               {windowWidth > 1200 ? (
-                <motion.div variants={bounceAnimation as unknown as Variants} initial="hidden" animate="visible">
-                  <Button
-                    variant="contained"
-                    sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}
-                    onClick={() => {
-                      router.push('/contact');
-                    }}
-                  >
-                    {renderLanguage('დაგვიკავშირდი', 'Submit Request')}
-                  </Button>
-                </motion.div>
+                <Button
+                  variant="contained"
+                  sx={{ borderRadius: '0px', backgroundColor: '#1362FF', color: '#fff' }}
+                  onClick={() => {
+                    router.push('/contact');
+                  }}
+                >
+                  {renderLanguage('დაგვიკავშირდი', 'Submit Request')}
+                </Button>
               ) : null}
             </Box>
 

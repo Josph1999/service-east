@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useCallback, useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Box, Typography } from '@mui/material';
 import axios, { AxiosResponse } from 'axios';
 import { motion } from 'framer-motion';
@@ -26,8 +25,6 @@ export default function Career(): React.JSX.Element {
   const { renderLanguage } = useLanguage();
 
   const [vacancies, setVacancies] = useState<Vacancy[]>([]);
-
-  const router = useRouter();
 
   const fetchVacancies = useCallback(async (): Promise<void> => {
     const response: AxiosResponse<ResponseInterface<Vacancy[]>> = await axios.get(
@@ -135,12 +132,17 @@ export default function Career(): React.JSX.Element {
           alignItems: 'center',
         }}
       >
+        {/* https://jobs.ge/ge/?view=jobs&id=582867
+        https://jobs.ge/ge/?view=jobs&id=582951 */}
+        {/* Electrician
+        Technician */}
         {vacancies.length > 0 ? (
           vacancies.map((item) => {
             return (
               <Box
                 onClick={() => {
-                  router.push(`/career/${item.id}`);
+                  window.location.href = item.description_eng
+                  // router.push(`/career/${item.id}`);
                 }}
                 key={item.id}
                 sx={{
@@ -152,6 +154,7 @@ export default function Career(): React.JSX.Element {
                   backgroundColor: '#1E1E26',
                   borderRadius: '8px',
                   cursor: 'pointer',
+                  marginBottom: '20px',
                 }}
               >
                 <Typography sx={{ fontWeight: 600, fontFeatureSettings: "'case' on", color: 'white' }}>

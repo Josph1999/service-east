@@ -174,7 +174,7 @@ export default function Contact(): React.JSX.Element {
               }}
             >
               <a
-                href="tel:+380443443901"
+                href="tel:+995511333386"
                 style={{
                   color: '#4338CA',
                   textDecoration: 'none',
@@ -199,7 +199,7 @@ export default function Contact(): React.JSX.Element {
                     },
                   }}
                 >
-                  <PhoneIcon /> +380 (44) 344 39 01
+                  <PhoneIcon /> +995 511 33 33 86
                 </Box>
               </a>
             </Button>
@@ -230,14 +230,8 @@ export default function Contact(): React.JSX.Element {
                 {' '}
                 <DirectionIcon />{' '}
                 {renderLanguage(
-                  `SERVICE EAST LLC
-"Horizon Office Tower"
-42-44 Shovkovychna Str, office 2-A
-01601 Kyiv Ukraine`,
-                  `SERVICE EAST LLC
-"Horizon Office Tower"
-42-44 Shovkovychna Str, office 2-A
-01601 Kyiv Ukraine`
+                  `გურამ ფანჯიკიძის 22, ბლოკი ა, ოფისი 7, 0160, თბილისი, საქართველო`,
+                  `Guram Panjikidze Street 22, Block A, Office 7, 0160, Tbilisi, Georgia`
                 )}
               </Box>
             </Button>

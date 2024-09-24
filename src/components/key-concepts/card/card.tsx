@@ -52,23 +52,26 @@ export default function Card(props: CardProps): React.JSX.Element {
         },
       }}
     >
-      <Box sx={{ padding: '24px', backgroundColor: '#fff' }}>
-        <Typography sx={{ fontFeatureSettings: "'case' on", fontWeight: 700, width: '100%' }}>
-          {renderLanguage(titleKa, titlEng)}
-        </Typography>
-        <Typography
-          className="description"
-          sx={{
-            opacity: 0,
-            visibility: 'hidden',
-            maxHeight: 0,
-            overflow: 'hidden',
-            transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out',
-          }}
-        >
-          {renderLanguage(descriptionKa, descriptionEng)}
-        </Typography>
-      </Box>
+      {isTeam ? null : (
+        <Box sx={{ padding: '24px', backgroundColor: '#fff' }}>
+          <Typography sx={{ fontFeatureSettings: "'case' on", fontWeight: 700, width: '100%' }}>
+            {renderLanguage(titleKa, titlEng)}
+          </Typography>
+
+          <Typography
+            className="description"
+            sx={{
+              opacity: 0,
+              visibility: 'hidden',
+              maxHeight: 0,
+              overflow: 'hidden',
+              transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out',
+            }}
+          >
+            {renderLanguage(descriptionKa, descriptionEng)}
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 }

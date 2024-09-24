@@ -13,9 +13,9 @@ import * as Yup from 'yup';
 
 import { paths } from '@/paths';
 import { useLanguage } from '@/contexts/language-context';
-import { QuillEditor } from '@/components/quill-editor/quill-editor';
-import styles from './add-vacancies.module.css';
 import { ResponseInterface, Vacancy } from '@/components/interfaces/response.interface';
+
+import styles from './add-vacancies.module.css';
 
 export default function AddVacanciesForm(): React.JSX.Element {
   const { renderLanguage } = useLanguage();
@@ -36,7 +36,7 @@ export default function AddVacanciesForm(): React.JSX.Element {
     initialValues: {
       title_ka: '',
       title_eng: '',
-      description_ka: '',
+      description_ka: 'აღწერა ქართულად',
       description_eng: '',
       pdf_ka: '',
       pdf_eng: '',
@@ -168,7 +168,18 @@ export default function AddVacanciesForm(): React.JSX.Element {
                 value={formik.values.title_eng}
                 className={styles.input}
               />
-              <Box sx={{ width: '100%' }}>
+              <TextField
+                error={Boolean(formik.touched.description_eng && formik.errors.description_eng)}
+                helperText={formik.touched.description_eng ? formik.errors.description_eng : null}
+                label={renderLanguage('jobs.ge - ს ლინკი', 'jobs.ge - Link')}
+                name="description_eng"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.description_eng}
+                fullWidth
+                className={styles.input}
+              />
+              {/* <Box sx={{ width: '100%' }}>
                 <QuillEditor
                   onChange={async (value: string) => {
                     await formik.setFieldValue('description_ka', value);
@@ -192,12 +203,12 @@ export default function AddVacanciesForm(): React.JSX.Element {
                 <Typography fontSize="12px" className={styles.helperText}>
                   {formik.errors.description_eng}
                 </Typography>
-              </Box>
+              </Box> */}
 
               <Typography sx={{ color: 'white' }}>{renderLanguage('აღწერა', 'Description')}</Typography>
             </Box>
 
-            <Box sx={{display: 'flex'}}>
+            <Box sx={{ display: 'flex' }}>
               <Box>
                 <Typography variant="h6">{renderLanguage('PDF ქართულად', 'PDF in Georgian')}</Typography>
                 <input

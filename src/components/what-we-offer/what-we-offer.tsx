@@ -4,13 +4,13 @@ import React, { useEffect, useRef } from 'react';
 import { useWindowWidth } from '@/helpers/window-width';
 import { Box, Typography } from '@mui/material';
 
-import { useLanguage } from '@/contexts/language-context';
+import { Language, useLanguage } from '@/contexts/language-context';
 
 import bottlesSrc from '../../../public/assets/Bottles.jpeg';
 import ArrowIcon from '../icons/arrow-icon';
 
 export default function WhatWeOffer(): React.JSX.Element {
-  const { renderLanguage } = useLanguage();
+  const { renderLanguage, language } = useLanguage();
   const windowWidth = useWindowWidth();
   
   
@@ -97,20 +97,20 @@ export default function WhatWeOffer(): React.JSX.Element {
               width: { xs: '100%', md: 'auto' },
             }}
           >
-            <Typography sx={{ fontSize: { xs: '20px', md: '32px' }, fontWeight: 700 }}>
+            <Typography sx={{ fontSize: { xs: '20px', md: '32px' }, fontWeight: 700}}>
               {renderLanguage(
                 'გამოცდილი ინჟინერებისა და მექანიკოსებისგან შემდგარი გუნდი მზად არის გაგიწიოთ მომსახურება საწარმოო ხაზების სერვისების ფართო სპექტრში. ',
                 'Service Offering'
               )}
             </Typography>
-            <Typography>
+            <Typography >
               {renderLanguage(
-                'მრავალწლიანი გამოცდილებისა და გლობალური პარტნიორობების შედეგად, სერვის ისტ საქართველოს გუნდს გააჩნია ხარისხისა და ეფექტურობის გარანტია, რომელიც თავის მხრივ ჩვენს მომხმარებლებსა და პარტნიორებს უქმნის საწარმოო ბიზნესის წარმართვეს სტაბილურ და გამართულ შესაძლებლობებს. ',
+                'მრავალწლიანი გამოცდილებისა და გლობალური პარტნიორობების შედეგად, სერვის ისტ საქართველოს გუნდს გააჩნია ხარისხისა და ეფექტურობის გარანტია, რომელიც თავის მხრივ ჩვენს მომხმარებლებსა და პარტნიორებს უქმნის საწარმოო ბიზნესის წარმართვის სტაბილურ და გამართულ შესაძლებლობებს. ',
                 'Service East Georgia is a global company specializing in the installation, assembly, and maintenance of equipment for the food, medical, and chemical industries. Our primary focus is the repair and servicing of filling systems for a wide variety of products, including water, beer, juice, oil, wine, milk, and bulk goods of different consistencies. We also provide expert services for labeling and packaging equipment for both glass and PET bottles, among other solutions.'
               )}
             </Typography>
             {windowWidth > 1000 ? (
-              <img src={bottlesSrc.src} width={544} height={400} alt="Services" style={{ objectFit: 'cover' }} />
+              <img src={bottlesSrc.src} width={544} height={400} alt="Services" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
             ) : null}
           </Box>
           <Box
@@ -147,23 +147,10 @@ export default function WhatWeOffer(): React.JSX.Element {
             </Typography>
           </Box>
         </Box>
-        <Box
-          sx={{
-            width: { xs: '100%', md: '800px' },
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-        >
-          <Typography sx={{ fontSize: { xs: '18px', md: '26px' }, fontWeight: 700 }}>
-            {renderLanguage(
-              'სერვის ისტ საქართველო არის თქვენი სანდო პარტნიორი საწარმოო ხაზებისა და მაღალი წარმადობის დანადგარების ტექნიკური და კომპონენტური სერვისების მომსახურების სფეროში. ჩვენი სწრაფვა ხარისხის სანდოობის სრულყოფისკენ ქმნის გარანტიას თქვენი ბიზნესის საიმედო და სტაბილუ წარმართვისთვის. ',
-              ''
-            )}
-          </Typography>
-        </Box>
+
       </Box>
       {windowWidth > 1400 ? (
-        <video width="770" height="1218" controls style={{ objectFit: 'cover' }} ref={videoRef} autoPlay muted loop>
+        <video width="770" height={ language === Language.KA ? "965px" : "845px"} controls style={{ objectFit: 'cover' }} ref={videoRef} autoPlay muted loop>
           <source
             src="https://firebasestorage.googleapis.com/v0/b/georaffal.appspot.com/o/Service%20East%20Video.mp4?alt=media&token=06c8e6a0-786f-41c9-bd2f-406b1a327893"
             type="video/mp4"
