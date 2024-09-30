@@ -2,4 +2,5 @@
 
   #partner {
     display: flex;
+    align-self: start;
   }
