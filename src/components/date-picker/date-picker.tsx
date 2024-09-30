@@ -15,7 +15,7 @@ export default function BasicDatePicker(props: BasicDatePickerProps) {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker']}>
         <DatePicker
-          label="Basic date picker"
+          label="Basic date pickers"
           value={value}
           onChange={(newValue) => {
             onChange(newValue);
