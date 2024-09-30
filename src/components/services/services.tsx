@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 import { useLanguage } from '@/contexts/language-context';
 
-import bottlesSrc from '../../../public/assets/Bottles.jpeg';
+import bottlesSrc from '../../../public/assets/Service_Page_Card_Pic.jpg';
 // import factorySrc from '../../../public/assets/FactoryPhoto.jpg';
 import DotsIcon from '../icons/dots-icon';
 
