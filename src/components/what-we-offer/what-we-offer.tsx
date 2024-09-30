@@ -152,7 +152,7 @@ export default function WhatWeOffer(): React.JSX.Element {
       {windowWidth > 1400 ? (
         <video width="770" height={ language === Language.KA ? "965px" : "845px"} controls style={{ objectFit: 'cover' }} ref={videoRef} autoPlay muted loop>
           <source
-            src="https://firebasestorage.googleapis.com/v0/b/georaffal.appspot.com/o/Service%20East%20Video.mp4?alt=media&token=06c8e6a0-786f-41c9-bd2f-406b1a327893"
+            src="https://firebasestorage.googleapis.com/v0/b/georaffal.appspot.com/o/Service_East_Video2.mp4?alt=media&token=6a60af95-c4d4-42a6-8766-65514cb9fc30"
             type="video/mp4"
           />
           Your browser does not support the video tag.
