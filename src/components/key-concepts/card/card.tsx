@@ -45,7 +45,7 @@ export default function Card(props: CardProps): React.JSX.Element {
         '&:hover .description': {
           opacity: 1,
           visibility: 'visible',
-          maxHeight: '200px', // Set to a reasonable value based on your content
+          maxHeight: '200px',
         },
         '@media (max-width: 1000px)': {
           height: '500px',
