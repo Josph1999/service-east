@@ -2,4 +2,5 @@
 
   #partner {
     display: flex;
+    flex-direction: column;
   }
