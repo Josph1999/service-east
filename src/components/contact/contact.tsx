@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Alert, Box, Button, FormHelperText, Snackbar, TextField, Typography } from '@mui/material';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import { motion } from 'framer-motion';
 import * as Yup from 'yup';
@@ -37,9 +38,7 @@ export default function Contact(): React.JSX.Element {
       subject: Yup.string()
         .required(renderLanguage('სათაური სავალდებულოა', 'Subject is required'))
         .max(50, renderLanguage('მაქს 50 ', 'Max 50')),
-      message: Yup.string()
-        .required(renderLanguage('აღწერა სავალდებულოა', 'Message is required'))
-        .max(250, renderLanguage('მაქს 250 ', 'Max 250')),
+      message: Yup.string().required(renderLanguage('აღწერა სავალდებულოა', 'Message is required')),
     }),
     initialValues: {
       name: '',
@@ -49,8 +48,15 @@ export default function Contact(): React.JSX.Element {
       message: '',
       phone_number: null,
     },
-    onSubmit: (values, currFormik) => {
-      console.log('Values:', values);
+    onSubmit: async (values, currFormik) => {
+      const dataToSend = {
+        first_name: values.name,
+        last_name: values.last_name,
+        description: values.message,
+        subject: values.subject,
+        email: values.email,
+      };
+      await axios.post('/api/contact-form', dataToSend);
       setOpen(true);
       currFormik.resetForm();
     },

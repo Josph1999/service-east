@@ -36,3 +36,15 @@ model Vacancy {
   created_at      DateTime @default(now())
   updated_at      DateTime @default(now()) @updatedAt
 }
+
+model FormSubmission {
+  id              String   @id @default(uuid())
+  first_name      String
+  last_name       String
+  description     String
+  email           String
+  subject         String
+  description_eng String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+}
