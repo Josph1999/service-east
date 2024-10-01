@@ -31,6 +31,13 @@ export const navItems = [
     href: paths.dashboard.publishedVacancies,
     icon: 'users',
   },
+  {
+    key: 'contactForms',
+    title_eng: 'Contact forms',
+    title_ka: 'საკონტაქტო ფორმები',
+    href: paths.dashboard.contactForms,
+    icon: 'users',
+  },
   // {
   //   key: 'galleryUpload',
   //   title_eng: 'Photo gallery',

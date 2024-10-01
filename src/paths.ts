@@ -19,6 +19,7 @@ export const paths = {
     agenda: '/dashboard/agendas',
     addVacancy: '/dashboard/add-vacancy',
     publishedVacancies: '/dashboard/published-vacancies',
+    contactForms: '/dashboard/contact-forms',
   },
   errors: { notFound: '/errors/not-found' },
 } as const;
